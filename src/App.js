@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './Styles/style.css';
 import Login from './Components/Login';
 import CreateUser from './Components/CreateUser';
 import GithubCreateUser from './Components/GithubCreateUser';

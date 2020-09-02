@@ -14,6 +14,8 @@ const CreateUser = () => {
     // eslint-disable-next-line 
     const [getUserpass, setGetUserpass] = useState(false);
     const [userpass, setUserpass] = useState('');
+    const [useremail, setUseremail] = useState('');
+
 
 
     useEffect(() => {
@@ -69,6 +71,7 @@ const CreateUser = () => {
             url: 'https://cors-anywhere.herokuapp.com/https://commitspy.herokuapp.com/api/users/register',
             data: {
                 user: {
+                    email: useremail,
                     access_token: access_token,
                     password: userpass,
                     scope: scope,
@@ -89,6 +92,7 @@ const CreateUser = () => {
 
         return (
             <div className="getpass">
+                <input type="email" placeholder='enter your email' value={useremail} onChange={e => setUseremail(e.target.value)} />
                 <input type="password" placeholder='enter your password' value={userpass} onChange={e => setUserpass(e.target.value)} />
                 <button onClick={Sendpass}>Register</button>
                 <h1>{scope}</h1>
@@ -115,32 +119,7 @@ const CreateUser = () => {
     }
 
 
-    // return (
-    //     <div className='createuser'>
-    //         <a
-    //             href={`https://github.com/login/oauth/authorize?scope=user&client_id=${client_id}&redirect_uri=${redirect_uri}`}
-    //             onClick={() => {
-    //                 setData({ ...data, errorMessage: "" });
-    //             }}
-    //         >
-    //             <span>Login with GitHub</span>
-    //         </a>
 
-
-
-
-    //         {{
-    //             if(getUserpass) {
-    //                 () => (
-    //                     <div className="getpass">
-    //                         <input type="password" placeholder='enter your password' value={userpass} onChange={e => setUserpass(e.target.value)} />
-    //                         <button onClick={Sendpass}>Register</button>
-    //                     </div>)
-    //             }
-
-    //         }}
-    //     </div>
-    // );
 };
 
 export default CreateUser;
