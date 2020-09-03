@@ -1,0 +1,99 @@
+.login {
+    height: 100vh;
+
+
+
+    .grid__container {
+        height: 100vh;
+        display: grid;
+        place-items: center;
+
+
+        .form__container {
+            padding: 32px 20px 32px 20px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            border-radius: .375rem;
+
+            h2 {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #2d3748;
+            }
+
+            .intro {
+                color: #a0aec0;
+                margin-top: .5rem;
+                font-size: .875rem;
+            }
+
+            .login__form {
+                margin-top: 2rem;
+                font-size: .875rem;
+                color: #2d3748;
+
+                input {
+                    padding: .75rem 1rem;
+                    min-width: 100%;
+                    border-radius: .375rem;
+                    appearance: none;
+                    border: 1px solid #e2e8f0;
+
+                    &::placeholder {
+                        color: #a0aec0;
+                    }
+
+
+                }
+
+                .pinput {
+                    margin-top: 1rem;
+                }
+
+                .form__btn {
+                    color: #2d3748;
+                    margin-top: 1.35rem;
+                    display: flex;
+                    flex-direction: column;
+
+                    button {
+                        border: none;
+                        padding: .75rem 1rem;
+                        width: 100%;
+                        vertical-align: top;
+                        border-radius: .375rem;
+                        font-weight: 500;
+                        cursor: pointer;
+                        margin-bottom: 0.75rem;
+                        font-size: 100%;
+
+                    }
+
+                    .login_btn {
+                        color: white;
+                        background-color: #1c3faa;
+                    }
+
+                    .signup_btn {
+                        color: #4a5568;
+                        border: 1px solid #e2e8f0;
+                    }
+                }
+
+            }
+
+            .footer {
+                margin-top: 2.5rem;
+                font-size: .875rem;
+                color: #2d3748;
+
+                span {
+                    color: #1344b9;
+                }
+            }
+
+        }
+    }
+}

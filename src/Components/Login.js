@@ -32,11 +32,35 @@ const Login = () => {
 
     return (
         <div className='login'>
-            <form >
-                <input type="email" placeholder='enter email' value={email} onChange={e => setEmail(e.target.value)} />
-                <input type="password" placeholder='password' value={pass} onChange={e => setPass(e.target.value)} />
-                <button onClick={Sendlogin}>Login</button>
-            </form>
+
+            <div className="grid__container">
+                <div className="form__container">
+
+                    <h2>Sign In</h2>
+
+                    <div className="intro">
+                        A few more clicks to sign in to your account.
+                        Manage all your projects in one place
+                    </div>
+                    <form className='login__form'>
+                        <input type="email" placeholder='enter email' value={email} onChange={e => setEmail(e.target.value)} />
+                        <input className='pinput' type="password" placeholder='password' value={pass} onChange={e => setPass(e.target.value)} />
+                        <div className="form__btn">
+
+                            <button className='login_btn' onClick={Sendlogin}>Login</button>
+                            <button className='signup_btn' >Sign up</button>
+                        </div>
+                    </form>
+
+
+                    <div className="footer">
+                        By signing up, you agree to our
+                        <br />
+                        <span>Terms and Conditions</span> & <span>Privacy Policy</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     );
 };

@@ -68,7 +68,7 @@ const CreateUser = () => {
         e.preventDefault();
         axios({
             method: 'post',
-            url: 'https://cors-anywhere.herokuapp.com/https://commitspy.herokuapp.com/api/users/register',
+            url: 'https://cors-anywhere.herokuapp.com/https://commitspy.herokuapp.com/api/users/regtoken',
             data: {
                 user: {
                     email: useremail,
