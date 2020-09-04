@@ -7,11 +7,10 @@ const Home = () => {
     return (
         <div>
             <h1>Home page testing context</h1>
-            <h1>{myuser?.name}</h1>
-            <img src={myuser?.avatar_url} alt="Avatar" />
-            <div>{myuser?.public_repos} Repos</div>
-            <div>{myuser?.followers} Followers</div>
-            <div>{myuser?.following} Following</div>
+            <h1>{myuser?.username} name</h1>
+            <img src={myuser?.avatar} alt="Avatar" />
+            <div>{myuser?.email} Repos</div>
+            <div>{myuser?.twitter} twitter</div>
         </div>
     );
 };

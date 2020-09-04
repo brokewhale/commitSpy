@@ -2,6 +2,7 @@ import React from 'react';
 import './Styles/style.css';
 import Login from './Components/Login';
 import CreateUser from './Components/CreateUser';
+import Home from './Components/Home';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
@@ -11,6 +12,7 @@ function App() {
     <div className="app">
       <Router>
         <Switch>
+
           <Route path='/login'>
             <CreateUser />
 
@@ -20,6 +22,7 @@ function App() {
             <Login />
 
           </Route>
+          <Route path="/home" component={Home} />
 
         </Switch>
       </Router>

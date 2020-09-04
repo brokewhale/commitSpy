@@ -1,14 +1,21 @@
 import React from 'react';
 import { useState } from 'react';
+import { useStateValue } from '../store/StateProvider';
+import { Redirect } from "react-router-dom";
+
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const axios = require('axios');
+    // eslint-disable-next-line 
+    const [state, dispatch] = useStateValue();
+    const [data, setData] = useState({ errorMessage: "", isLoading: false });
 
 
     const Sendlogin = (e) => {
         e.preventDefault();
+        setData({ ...data, errorMessage: "" })
         // console.log('clicked');
 
         axios({
@@ -23,19 +30,33 @@ const Login = () => {
         })
             .then(function (response) {
                 console.log(response);
+                dispatch({
+                    type: "LOGIN",
+                    payload: { myuser: response.data.user, isLoggedIn: true }
+                });
             })
             .catch(function (error) {
                 console.log(error);
+                setData({
+                    isLoading: false,
+                    errorMessage: "Sorry! Login failed"
+                });
             });
 
 
     }
+
+    if (state.isLoggedIn) {
+        return <Redirect to="/home" />;
+    }
+
 
     return (
         <div className='login'>
 
             <div className="grid__container">
                 <div className="form__container">
+                    <p>{data.errorMessage}</p>
 
                     <h2>Sign In</h2>
 

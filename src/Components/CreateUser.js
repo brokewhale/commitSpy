@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useStateValue } from '../store/StateProvider';
+import { Redirect } from "react-router-dom";
+
 
 const CreateUser = () => {
     const [state, dispatch] = useStateValue();
@@ -81,12 +83,22 @@ const CreateUser = () => {
         )
             .then(function (response) {
                 console.log(response);
+                dispatch({
+                    type: "LOGIN",
+                    payload: { myuser: response.data.user, isLoggedIn: true }
+                });
             })
             .catch(function (error) {
                 console.log(error);
+                setData({
+                    isLoading: false,
+                    errorMessage: "Sorry! Login failed"
+                });
             });
     }
-
+    if (state.isLoggedIn) {
+        return <Redirect to="/home" />;
+    }
 
     if (getUserpass) {
 
