@@ -9,6 +9,7 @@ const Login = () => {
 
     const Sendlogin = (e) => {
         e.preventDefault();
+        // console.log('clicked');
 
         axios({
             method: 'post',

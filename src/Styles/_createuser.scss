@@ -1,0 +1,62 @@
+.createuser {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+
+    a {
+        padding: 20px;
+        color: black;
+        border-radius: 8px;
+        background-color: white;
+        text-decoration-line: none;
+        font-size: 1.1rem;
+
+    }
+}
+
+.getpass {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+
+
+    &_container {
+        padding: 32px 20px 32px 20px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        border-radius: .375rem;
+
+        input {
+            padding: .75rem 1rem;
+            min-width: 100%;
+            border-radius: .375rem;
+            appearance: none;
+            border: 1px solid #e2e8f0;
+            // background-color: white;
+            margin-bottom: 15px;
+
+            &::placeholder {
+                color: #a0aec0;
+            }
+
+
+        }
+
+        button {
+            border: none;
+            padding: .75rem 1rem;
+            width: 100%;
+            vertical-align: top;
+            border-radius: .375rem;
+            font-weight: 500;
+            cursor: pointer;
+            margin-bottom: 0.75rem;
+            font-size: 100%;
+            color: white;
+            background-color: #1c3faa;
+
+        }
+    }
+}

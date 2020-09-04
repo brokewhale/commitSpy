@@ -8,6 +8,85 @@ body {
   height: auto;
 }
 
+.createuser {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.createuser a {
+  padding: 20px;
+  color: black;
+  border-radius: 8px;
+  background-color: white;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+  font-size: 1.1rem;
+}
+
+.getpass {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.getpass_container {
+  padding: 32px 20px 32px 20px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  border-radius: .375rem;
+}
+
+.getpass_container input {
+  padding: .75rem 1rem;
+  min-width: 100%;
+  border-radius: .375rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 15px;
+}
+
+.getpass_container input::-webkit-input-placeholder {
+  color: #a0aec0;
+}
+
+.getpass_container input:-ms-input-placeholder {
+  color: #a0aec0;
+}
+
+.getpass_container input::-ms-input-placeholder {
+  color: #a0aec0;
+}
+
+.getpass_container input::placeholder {
+  color: #a0aec0;
+}
+
+.getpass_container button {
+  border: none;
+  padding: .75rem 1rem;
+  width: 100%;
+  vertical-align: top;
+  border-radius: .375rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 0.75rem;
+  font-size: 100%;
+  color: white;
+  background-color: #1c3faa;
+}
+
 .login {
   height: 100vh;
 }

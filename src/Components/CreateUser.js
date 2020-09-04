@@ -43,7 +43,8 @@ const CreateUser = () => {
                 code: newUrl[1]
             })
                 .then(response => {
-                    // console.log(response.data)
+                    console.log(response.data)
+                    console.log(newUrl)
 
                     let params = new URLSearchParams(response.data);
                     setAccess_token(params.get("access_token"));
@@ -66,19 +67,18 @@ const CreateUser = () => {
     const Sendpass = (e) => {
         const axios = require('axios');
         e.preventDefault();
-        axios({
-            method: 'post',
-            url: 'https://cors-anywhere.herokuapp.com/https://commitspy.herokuapp.com/api/users/regtoken',
-            data: {
-                user: {
-                    email: useremail,
-                    access_token: access_token,
-                    password: userpass,
-                    scope: scope,
-                    token_type: token_type,
-                }
+        axios.post('https://cors-anywhere.herokuapp.com/https://commitspy.herokuapp.com/api/users/regtoken',
+
+            {
+
+                email: useremail,
+                access_token: access_token,
+                password: userpass,
+                scope: scope,
+                token_type: token_type,
+
             }
-        })
+        )
             .then(function (response) {
                 console.log(response);
             })
@@ -92,12 +92,15 @@ const CreateUser = () => {
 
         return (
             <div className="getpass">
-                <input type="email" placeholder='enter your email' value={useremail} onChange={e => setUseremail(e.target.value)} />
-                <input type="password" placeholder='enter your password' value={userpass} onChange={e => setUserpass(e.target.value)} />
-                <button onClick={Sendpass}>Register</button>
-                <h1>{scope}</h1>
+                <div className="getpass_container">
+
+                    <input type="email" placeholder='enter your email' value={useremail} onChange={e => setUseremail(e.target.value)} />
+                    <input type="password" placeholder='enter your password' value={userpass} onChange={e => setUserpass(e.target.value)} />
+                    <button onClick={Sendpass}>Register</button>
+                </div>
+                {/* <h1>{scope}</h1>
                 <h1>{access_token}</h1>
-                <h1>{token_type}</h1>
+                <h1>{token_type}</h1> */}
             </div>
 
         )
