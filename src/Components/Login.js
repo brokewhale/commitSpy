@@ -32,7 +32,7 @@ const Login = () => {
                 console.log(response);
                 dispatch({
                     type: "LOGIN",
-                    payload: { myuser: response.data.user, isLoggedIn: true }
+                    payload: { token: response.data.user.token, isLoggedIn: true }
                 });
             })
             .catch(function (error) {

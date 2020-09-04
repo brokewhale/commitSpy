@@ -1,19 +1,29 @@
 import React from 'react';
 import { useStateValue } from '../store/StateProvider';
+import { useEffect } from 'react';
 
 const Home = () => {
     // eslint-disable-next-line
-    const [{ myuser }, dispatch] = useStateValue();
-    console.log(myuser?.username);
-    console.log(myuser?.email);
-    console.log(myuser?.twitter);
+    const [{ token }, dispatch] = useStateValue();
+    console.log(token);
+
+    useEffect(() => {
+        const axios = require('axios');
+
+        if (token) {
+            axios.get(`https://cors-anywhere.herokuapp.com/https://commitspy.herokuapp.com/api/users/me`, {
+                headers: { 'authorization': `Bearer ${token}` }
+            }).then((resp) => {
+                console.log(resp);
+            }).catch(err => {
+                console.log(err);
+            })
+        }
+    }, [token, dispatch])
+
     return (
         <div>
-            <h1>Home page testing context</h1>
-            <h1>{myuser?.username} name</h1>
-            <img src={myuser?.avatar} alt="Avatar" />
-            <div>{myuser?.email} Repos</div>
-            <div>{myuser?.twitter} twitter</div>
+
         </div>
     );
 };

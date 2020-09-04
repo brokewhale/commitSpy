@@ -5,7 +5,7 @@ export const initialState = {
     redirect_uri: process.env.REACT_APP_REDIRECT_URI,
     client_secret: process.env.REACT_APP_CLIENT_SECRET,
     proxy_url: process.env.REACT_APP_PROXY_URL,
-    myuser: JSON.parse(localStorage.getItem("myuser")) || null,
+    token: JSON.parse(localStorage.getItem("token")) || null,
 };
 
 const reducer = (state, action) => {
@@ -13,14 +13,14 @@ const reducer = (state, action) => {
         case "LOGIN": {
             localStorage.setItem("isLoggedIn", JSON.stringify(action.payload.isLoggedIn))
             // localStorage.setItem("user", JSON.stringify(action.payload.user))
-            localStorage.setItem("myuser", JSON.stringify(action.payload.myuser))
+            localStorage.setItem("token", JSON.stringify(action.payload.token))
 
             console.log(action.payload.isLoggedIn)
             return {
                 ...state,
                 isLoggedIn: action.payload.isLoggedIn,
                 // user: action.payload.user,
-                myuser: action.payload.myuser
+                token: action.payload.token
 
             };
         }
