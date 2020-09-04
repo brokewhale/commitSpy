@@ -4,6 +4,9 @@ import { useStateValue } from '../store/StateProvider';
 const Home = () => {
     // eslint-disable-next-line
     const [{ myuser }, dispatch] = useStateValue();
+    console.log(myuser?.username);
+    console.log(myuser?.email);
+    console.log(myuser?.twitter);
     return (
         <div>
             <h1>Home page testing context</h1>

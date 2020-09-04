@@ -5,7 +5,7 @@ export const initialState = {
     redirect_uri: process.env.REACT_APP_REDIRECT_URI,
     client_secret: process.env.REACT_APP_CLIENT_SECRET,
     proxy_url: process.env.REACT_APP_PROXY_URL,
-    myuser: JSON.parse(localStorage.getItem("user")) || null,
+    myuser: JSON.parse(localStorage.getItem("myuser")) || null,
 };
 
 const reducer = (state, action) => {

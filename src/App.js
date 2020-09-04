@@ -3,7 +3,7 @@ import './Styles/style.css';
 import Login from './Components/Login';
 import CreateUser from './Components/CreateUser';
 import Home from './Components/Home';
-
+import Wellcome from './Components/Wellcome'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 
@@ -12,6 +12,8 @@ function App() {
     <div className="app">
       <Router>
         <Switch>
+          <Route exact path="/" component={Wellcome} />
+
 
           <Route path='/login'>
             <CreateUser />
@@ -23,6 +25,7 @@ function App() {
 
           </Route>
           <Route path="/home" component={Home} />
+
 
         </Switch>
       </Router>
