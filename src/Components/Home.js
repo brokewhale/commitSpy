@@ -3,6 +3,9 @@ import { useStateValue } from '../store/StateProvider';
 import { useEffect } from 'react';
 // import { SearchOutlined } from '@material-ui/icons';
 import ProjectCard from './ProjectCard';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Media from 'react-media';
+
 
 const Home = () => {
     // eslint-disable-next-line
@@ -25,30 +28,82 @@ const Home = () => {
 
     return (
         <div className='home'>
-            <div className="home_grid">
-                <div className="info">
-                    <h1 className='name'>Hi User</h1>
-                    <p className='greetings'>Welcome back to workspace, we missed you</p>
+            <Media query="(max-width: 1024px)">
+                {matches =>
+                    matches ? (
 
-                    <div className="info__projects">
-                        <h3>Projects <span>(13)</span></h3>
-                        <div className="proj_grid">
 
-                            <ProjectCard />
-                            <ProjectCard />
-                            <ProjectCard />
-                            <ProjectCard />
-                            <ProjectCard />
-                            <ProjectCard />
+                        <Router>
 
-                        </div>
+                            <div className="home_grid">
 
-                    </div>
-                </div>
-                <div className="showmain">
+                                <Switch>
+                                    <Route exact path='/home'>
+                                        <div className="info">
+                                            <h1 className='name'>Hi User</h1>
+                                            <p className='greetings'>Welcome back to workspace, we missed you</p>
 
-                </div>
-            </div>
+                                            <div className="info__projects">
+                                                <h3>Projects <span>(13)</span></h3>
+                                                <div className="proj_grid">
+
+                                                    <ProjectCard />
+                                                    <ProjectCard />
+                                                    <ProjectCard />
+                                                    <ProjectCard />
+                                                    <ProjectCard />
+                                                    <ProjectCard />
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </Route>
+                                    <Route path='/home/project'>
+                                        <div className="showmain">
+
+                                        </div>
+                                    </Route>
+                                </Switch>
+
+                            </div>
+                        </Router>
+                    ) : (
+                            <Router>
+
+                                <div className="home_grid">
+                                    <div className="info">
+                                        <h1 className='name'>Hi User</h1>
+                                        <p className='greetings'>Welcome back to workspace, we missed you</p>
+
+                                        <div className="info__projects">
+                                            <h3>Projects <span>(13)</span></h3>
+                                            <div className="proj_grid">
+
+                                                <ProjectCard />
+                                                <ProjectCard />
+                                                <ProjectCard />
+                                                <ProjectCard />
+                                                <ProjectCard />
+                                                <ProjectCard />
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <Switch>
+                                        <Route path='/home/project'>
+                                            <div className="showmain">
+
+                                            </div>
+                                        </Route>
+                                    </Switch>
+
+                                </div>
+                            </Router>
+                        )
+                }
+            </Media>
 
         </div>
     );

@@ -86,7 +86,14 @@
         border-radius: 15px;
 
         @include breakpoint-down(medium) {
-            display: none;
+            // display: none;
+            margin: -10px;
+        }
+    }
+
+    @media screen and (max-width: 1024px) and (min-width: 641px) {
+        .showmain {
+            margin: 0;
         }
     }
 }

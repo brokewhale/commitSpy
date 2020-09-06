@@ -1,11 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ProjectCard = () => {
     return (
-        <div className='projectcard'>
+        <Link className='projectcard' to='/home/project'>
+
             <div className='initials'>AB</div>
             <p className='projname'>project name</p>
-        </div>
+
+        </Link>
     );
 };
 
