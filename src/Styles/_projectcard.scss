@@ -1,0 +1,23 @@
+.projectcard {
+    width: 98px;
+
+
+    .initials {
+
+        width: 98px;
+        height: 98px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: 19px;
+        margin-bottom: 20px;
+        background-color: mediumorchid;
+        border-radius: 16px;
+    }
+
+    .projname {
+        text-align: center;
+        width: 98px;
+    }
+}

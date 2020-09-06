@@ -1,5 +1,12 @@
 body {
-    padding: 12px;
-    background-color: #1c3faa;
+    padding: 10px;
+    background-color: #262a41;
     font-size: 14px;
+    height: 100%;
+    box-sizing: border-box;
+
+    @include breakpoint-down(small) {
+        padding: 20px;
+    }
+
 }
