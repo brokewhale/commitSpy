@@ -218,6 +218,7 @@ a {
   color: white;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  position: relative;
 }
 
 .home_grid {
@@ -320,12 +321,12 @@ a {
 }
 
 .projectcard {
-  width: 98px;
+  width: 85px;
 }
 
 .projectcard .initials {
-  width: 98px;
-  height: 98px;
+  width: 85px;
+  height: 85px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -347,6 +348,34 @@ a {
 
 .projectcard .projname {
   text-align: center;
-  width: 98px;
+  width: 85px;
+}
+
+.createbtn {
+  position: fixed;
+  bottom: 28px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  background-color: blueviolet;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 12px;
+  cursor: pointer;
+  -webkit-box-shadow: -1px 0px 13px -1px blueviolet;
+          box-shadow: -1px 0px 13px -1px blueviolet;
+}
+
+.createbtn svg {
+  color: white;
+  width: 24px;
+  height: 24px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import ProjectCard from './ProjectCard';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Media from 'react-media';
+import CreateBtn from './CreateBtn';
 
 
 const Home = () => {
@@ -28,6 +29,7 @@ const Home = () => {
 
     return (
         <div className='home'>
+            <CreateBtn />
             <Media query="(max-width: 1024px)">
                 {matches =>
                     matches ? (

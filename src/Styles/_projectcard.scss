@@ -1,11 +1,11 @@
 .projectcard {
-    width: 98px;
+    width: 85px;
 
 
     .initials {
 
-        width: 98px;
-        height: 98px;
+        width: 85px;
+        height: 85px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -15,10 +15,11 @@
         background-color: rgb(199, 35, 240);
 
         border-radius: 16px;
+
     }
 
     .projname {
         text-align: center;
-        width: 98px;
+        width: 85px;
     }
 }
