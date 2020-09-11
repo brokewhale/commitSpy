@@ -1,0 +1,34 @@
+.chooseproj {
+    // background-color: #ffffff;
+    // background-color: yellowgreen;
+    background-color: #F1F5F8;
+    border-radius: 15px;
+    padding: 15px;
+    overflow: scroll;
+
+
+    @include breakpoint-down(medium) {
+        // display: none;
+        margin: -10px;
+    }
+
+    &__form {
+        display: grid;
+        place-items: center;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 641px) {
+    .chooseproj {
+        margin: 0;
+    }
+}
+
+.chooseproj::-webkit-scrollbar {
+    display: none;
+}
+
+.chooseproj {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

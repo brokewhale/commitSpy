@@ -6,6 +6,9 @@ export const initialState = {
     client_secret: process.env.REACT_APP_CLIENT_SECRET,
     proxy_url: process.env.REACT_APP_PROXY_URL,
     token: JSON.parse(localStorage.getItem("token")) || null,
+    repos: JSON.parse(localStorage.getItem("repos")) || null,
+
+
 };
 
 const reducer = (state, action) => {
@@ -14,13 +17,24 @@ const reducer = (state, action) => {
             localStorage.setItem("isLoggedIn", JSON.stringify(action.payload.isLoggedIn))
             // localStorage.setItem("user", JSON.stringify(action.payload.user))
             localStorage.setItem("token", JSON.stringify(action.payload.token))
+            // localStorage.setItem("repos", JSON.stringify(action.payload.repos))
+
 
             console.log(action.payload.isLoggedIn)
             return {
                 ...state,
                 isLoggedIn: action.payload.isLoggedIn,
                 // user: action.payload.user,
-                token: action.payload.token
+                token: action.payload.token,
+
+            };
+        }
+        case "GETREPO": {
+            localStorage.setItem("repos", JSON.stringify(action.payload.repos))
+
+            return {
+                ...state,
+                repos: action.payload.repos
 
             };
         }

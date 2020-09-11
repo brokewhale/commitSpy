@@ -6,6 +6,7 @@ import ProjectCard from './ProjectCard';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Media from 'react-media';
 import CreateBtn from './CreateBtn';
+import Chooseproj from './Chooseproj';
 
 
 const Home = () => {
@@ -29,13 +30,14 @@ const Home = () => {
 
     return (
         <div className='home'>
-            <CreateBtn />
             <Media query="(max-width: 1024px)">
                 {matches =>
                     matches ? (
 
 
                         <Router>
+                            <CreateBtn />
+
 
                             <div className="home_grid">
 
@@ -61,17 +63,23 @@ const Home = () => {
                                             </div>
                                         </div>
                                     </Route>
+                                    <Route path='/home/repos' >
+                                        <Chooseproj />
+                                    </Route>
                                     <Route path='/home/project'>
                                         <div className="showmain">
 
                                         </div>
                                     </Route>
+
                                 </Switch>
 
                             </div>
                         </Router>
                     ) : (
                             <Router>
+                                <CreateBtn />
+
 
                                 <div className="home_grid">
                                     <div className="info">
@@ -94,11 +102,16 @@ const Home = () => {
                                         </div>
                                     </div>
                                     <Switch>
+                                        <Route path='/home/repos' >
+                                            <Chooseproj />
+                                        </Route>
+
                                         <Route path='/home/project'>
                                             <div className="showmain">
 
                                             </div>
                                         </Route>
+
                                     </Switch>
 
                                 </div>

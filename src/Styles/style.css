@@ -378,4 +378,80 @@ a {
   width: 24px;
   height: 24px;
 }
+
+.chooseproj {
+  background-color: #F1F5F8;
+  border-radius: 15px;
+  padding: 15px;
+  overflow: scroll;
+}
+
+@media (max-width: 64em) {
+  .chooseproj {
+    margin: -10px;
+  }
+}
+
+.chooseproj__form {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 641px) {
+  .chooseproj {
+    margin: 0;
+  }
+}
+
+.chooseproj::-webkit-scrollbar {
+  display: none;
+}
+
+.chooseproj {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.listrepos {
+  padding: 1rem;
+  color: black;
+  border-radius: 6px;
+  background-color: #c5c7df78;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 15px;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, -webkit-box-shadow, -webkit-transform;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.listrepos:hover {
+  -webkit-transform: scaleX(1.05);
+          transform: scaleX(1.05);
+  -webkit-box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.listrepos h1 {
+  font-size: 1.5rem;
+}
+
+.listrepos .btn {
+  display: none;
+}
+
+.shown {
+  display: block !important;
+}
 /*# sourceMappingURL=style.css.map */
