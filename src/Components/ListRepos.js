@@ -1,10 +1,18 @@
 import React from 'react';
 import { useState } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { createBrowserHistory } from "history";
+
+
+
 // import Popup from 'reactjs-popup';
 import { Redirect } from "react-router-dom";
 
 
-const ListRepos = ({ reponame, id, fullname, token }) => {
+const ListRepos = ({ reponame, id, fullname, token, onTee }) => {
+    const appHistory = createBrowserHistory();
+
+
     const [done, setDone] = useState(false)
 
 
@@ -14,12 +22,15 @@ const ListRepos = ({ reponame, id, fullname, token }) => {
             title: fullname,
         }
         const axios = require('axios');
-        axios.post(`https://cors-anywhere.herokuapp.com/https://commitspy.herokuapp.com/api/project/`, { project }, {
+        axios.post(`https://commitspy.herokuapp.com/api/project/`, { project }, {
             headers: { 'authorization': `Bearer ${token}` },
 
         }).then(function (response) {
             console.log(response);
+            onTee(response)
+
             setDone(true)
+
 
         }).catch(function (error) {
             console.log(error);
@@ -31,6 +42,9 @@ const ListRepos = ({ reponame, id, fullname, token }) => {
 
 
     if (done) {
+        // appHistory.push('/home');
+        // appHistory.goBack();
+
         return <Redirect to="/home" />;
     }
     return (

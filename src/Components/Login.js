@@ -20,7 +20,7 @@ const Login = () => {
 
         axios({
             method: 'post',
-            url: 'https://cors-anywhere.herokuapp.com/https://commitspy.herokuapp.com/api/users/login',
+            url: 'https://commitspy.herokuapp.com/api/users/login',
             data: {
                 user: {
                     email: email,

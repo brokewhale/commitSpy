@@ -38,7 +38,7 @@ const CreateUser = () => {
 
 
             // fetch user details with token
-            axios.post(`https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token`, {
+            axios.post(`https://github.com/login/oauth/access_token`, {
                 client_id: state.client_id,
                 redirect_uri: state.redirect_uri,
                 client_secret: state.client_secret,
@@ -69,7 +69,7 @@ const CreateUser = () => {
     const Sendpass = (e) => {
         const axios = require('axios');
         e.preventDefault();
-        axios.post('https://cors-anywhere.herokuapp.com/https://commitspy.herokuapp.com/api/users/regtoken',
+        axios.post('https://commitspy.herokuapp.com/api/users/regtoken',
 
             {
 
@@ -110,9 +110,7 @@ const CreateUser = () => {
                     <input type="password" placeholder='enter your password' value={userpass} onChange={e => setUserpass(e.target.value)} />
                     <button onClick={Sendpass}>Register</button>
                 </div>
-                {/* <h1>{scope}</h1>
-                <h1>{access_token}</h1>
-                <h1>{token_type}</h1> */}
+
             </div>
 
         )
