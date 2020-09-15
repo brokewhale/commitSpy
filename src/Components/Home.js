@@ -9,6 +9,7 @@ import CreateBtn from './CreateBtn';
 import Chooseproj from './Chooseproj';
 import { useState } from 'react';
 import { useHistory } from 'react-router'
+import ProjectInfo from './ProjectInfo';
 
 
 
@@ -82,7 +83,7 @@ const Home = () => {
                                                     <div className="proj_grid">
                                                         {projects.map(project => (
 
-                                                            <ProjectCard key={project.git_id} />
+                                                            <ProjectCard key={project.git_id} id={project.git_id} />
 
                                                         ))}
 
@@ -96,8 +97,9 @@ const Home = () => {
                                         <Route path='/home/repos' >
                                             <Chooseproj onTee={tee} />
                                         </Route>
-                                        <Route path='/home/project'>
+                                        <Route path='/home/project/:roomId'>
                                             <div className="showmain">
+                                                <ProjectInfo projects={projects} />
 
                                             </div>
                                         </Route>
@@ -135,8 +137,9 @@ const Home = () => {
 
                                             </Route>
 
-                                            <Route path='/home/project'>
+                                            <Route path='/home/project/:roomId'>
                                                 <div className="showmain">
+                                                    <ProjectInfo projects={projects} />
 
                                                 </div>
                                             </Route>

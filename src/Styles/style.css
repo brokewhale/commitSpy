@@ -454,4 +454,8 @@ a {
 .shown {
   display: block !important;
 }
+
+.projectinfo {
+  color: black;
+}
 /*# sourceMappingURL=style.css.map */
