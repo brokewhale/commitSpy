@@ -1,3 +1,39 @@
 .projectinfo {
     color: black;
+    // padding: 20px;
+    padding-top: 20px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .name {
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+
+    .settings {
+        margin-top: 20px;
+
+        h1 {
+            font-size: 23px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid gainsboro;
+            margin-bottom: 25px;
+        }
+
+        &_info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+
+            p {
+                margin-left: auto;
+                color: red;
+            }
+        }
+    }
+
 }

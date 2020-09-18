@@ -6,20 +6,25 @@
     position: relative;
 
     &_grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        // grid-template-columns: 1fr 1fr;
+        justify-content: center;
         height: 97vh;
+        flex-wrap: wrap;
+        // place-items: center;
 
         @include breakpoint-down(medium) {
+            display: grid;
             grid-template-columns: 1fr;
         }
 
 
         .info {
+            flex: 0.5;
             display: flex;
             justify-content: center;
             flex-direction: column;
-            padding: 0 169px 0 150px;
+            padding: 0 60px 0 60px;
 
             // padding-top: 130px;
             // padding-right: 169px;
@@ -42,8 +47,8 @@
 
         @media screen and (max-width: 1165px) and (min-width: 1025px) {
             .info {
-                padding-right: 100px;
-                padding-left: 100px;
+                padding-right: 50px;
+                padding-left: 50px;
             }
         }
 
@@ -83,6 +88,7 @@
 
 
     .showmain {
+        flex: 0.5;
         background-color: #ffffff;
         border-radius: 15px;
 

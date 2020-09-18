@@ -6,10 +6,9 @@ import ListRepos from './ListRepos';
 
 
 const Chooseproj = ({ onTee }) => {
-    const [{ token }, dispatch] = useStateValue();
+    const [{ token },] = useStateValue();
     const [isloading, setIsloading] = useState(false);
     const [nonredux, SetNonredux] = useState([]);
-    const [repos, setRepos] = useState([])
     useEffect(() => {
         const axios = require('axios');
         axios.get(`https://commitspy.herokuapp.com/api/users/repos`, {
@@ -21,7 +20,7 @@ const Chooseproj = ({ onTee }) => {
             //     type: "GETREPO",
             //     payload: { repos: resp.data, }
             // });
-            setRepos(resp.data)
+            // setRepos(resp.data)
             // console.log(repos[4].name);
             setIsloading(true)
 

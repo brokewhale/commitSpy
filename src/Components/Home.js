@@ -8,7 +8,6 @@ import Media from 'react-media';
 import CreateBtn from './CreateBtn';
 import Chooseproj from './Chooseproj';
 import { useState } from 'react';
-import { useHistory } from 'react-router'
 import ProjectInfo from './ProjectInfo';
 
 
@@ -20,7 +19,6 @@ const Home = () => {
     const [me, setMe] = useState({});
     const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(false);
-    const history = useHistory()
     // console.log(token);
     let tee = (res) => {
         let project = res.data.project;
@@ -53,7 +51,9 @@ const Home = () => {
         }
 
 
-    }, [])
+    },
+        // eslint-disable-next-line
+        [])
 
 
 

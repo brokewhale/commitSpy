@@ -1,7 +1,5 @@
 import React from 'react';
 import { useState } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { createBrowserHistory } from "history";
 
 
 
@@ -10,7 +8,6 @@ import { Redirect } from "react-router-dom";
 
 
 const ListRepos = ({ reponame, id, fullname, token, onTee }) => {
-    const appHistory = createBrowserHistory();
 
 
     const [done, setDone] = useState(false)
