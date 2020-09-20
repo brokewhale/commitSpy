@@ -69,7 +69,8 @@
             .proj_grid {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
-                gap: 40px;
+                row-gap: 40px;
+                column-gap: 27px;
 
                 @include breakpoint-down(small) {
                     grid-template-columns: 1fr 1fr;

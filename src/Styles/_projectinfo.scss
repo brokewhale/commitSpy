@@ -5,13 +5,17 @@
     padding-right: 50px;
     padding-bottom: 20px;
     padding-left: 50px;
-    height: 100vh;
     display: flex;
     flex-direction: column;
 
+    @include breakpoint-down(small) {
+        padding: 10px;
+        padding-top: 30px;
+    }
+
     .name {
         font-size: 1.5rem;
-        font-weight: 400;
+        font-weight: 500;
     }
 
     .settings {
@@ -29,11 +33,53 @@
             align-items: center;
             margin-bottom: 10px;
 
+            h3 {
+                color: grey;
+            }
+
             p {
                 margin-left: auto;
-                color: red;
+                background-color: lightblue;
+                border-radius: 9px;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+
+            svg {
+
+                margin-left: 15px;
+                color: gray;
             }
         }
     }
 
+}
+
+.notification {
+    display: flex;
+    align-items: center;
+    // padding: 15px;
+    background-color: #F3F5FA;
+    width: fit-content;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+
+    svg {
+        margin-right: 5px;
+        color: gray;
+    }
+
+    h3 {
+        color: gray;
+
+        font-size: 1rem;
+    }
+
+    .date {
+        color: black;
+        margin-left: 15px;
+    }
 }

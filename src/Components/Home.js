@@ -83,7 +83,7 @@ const Home = () => {
                                                     <div className="proj_grid">
                                                         {projects.map(project => (
 
-                                                            <ProjectCard key={project.git_id} id={project.git_id} />
+                                                            <ProjectCard key={project.git_id} id={project.git_id} name={project.title} />
 
                                                         ))}
 
@@ -123,7 +123,7 @@ const Home = () => {
                                                 <div className="proj_grid">
                                                     {projects.map(project => (
 
-                                                        <ProjectCard key={project.git_id} id={project.git_id} />
+                                                        <ProjectCard key={project.git_id} id={project.git_id} name={project.title} />
 
                                                     ))}
 
