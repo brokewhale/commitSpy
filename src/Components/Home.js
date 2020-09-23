@@ -27,6 +27,25 @@ const Home = () => {
 
 
     }
+    let ken = (res) => {
+        let project = res.data;
+        let temp = projects
+        console.log("projects", projects);
+        console.log('project', project);
+
+        // console.log("res from home", project);
+        // let ind = temp.findIndex(x => x._id === project._id)
+        // // setProjects(projects.filter((e) => (e !== project)))
+        // console.log(ind);
+        // // projects.splice(0, ind)
+        // temp.splice(ind, 1)
+        // setProjects([])
+
+        // console.log(projects);
+        // setProjects(projects)
+        // // console.log(projects.splice(ind, 1))
+
+    }
 
     useEffect(() => {
         const axios = require('axios');
@@ -99,7 +118,7 @@ const Home = () => {
                                         </Route>
                                         <Route path='/home/project/:roomId'>
                                             <div className="showmain">
-                                                <ProjectInfo projects={projects} />
+                                                <ProjectInfo projects={projects} token={token} onKen={ken} />
 
                                             </div>
                                         </Route>
@@ -139,7 +158,7 @@ const Home = () => {
 
                                             <Route path='/home/project/:roomId'>
                                                 <div className="showmain">
-                                                    <ProjectInfo projects={projects} />
+                                                    <ProjectInfo projects={projects} token={token} onKen={ken} />
 
                                                 </div>
                                             </Route>
