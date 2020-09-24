@@ -19,6 +19,9 @@ const Home = () => {
     const [me, setMe] = useState({});
     const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [load, setLoad] = useState(false);
+
+
     // console.log(token);
     let tee = (res) => {
         let project = res.data.project;
@@ -28,24 +31,25 @@ const Home = () => {
 
     }
     let ken = (res) => {
+
         let project = res.data;
         let temp = projects
-        console.log("projects", projects);
-        console.log('project', project);
+        // console.log(temp);
+        // console.log(project);
 
-        // console.log("res from home", project);
-        // let ind = temp.findIndex(x => x._id === project._id)
-        // // setProjects(projects.filter((e) => (e !== project)))
+        let ind = temp.findIndex(x => x._id === project._id)
         // console.log(ind);
-        // // projects.splice(0, ind)
-        // temp.splice(ind, 1)
-        // setProjects([])
+        temp.splice(ind, 1)
+        setProjects([])
+        setProjects(temp)
+        // console.log(temp);
 
-        // console.log(projects);
-        // setProjects(projects)
-        // // console.log(projects.splice(ind, 1))
-
+        // setProjects(temp)
+        // setLoad(true)
     }
+    // useEffect(() => {
+    //     setProjects(projects)
+    // }, [load])
 
     useEffect(() => {
         const axios = require('axios');
@@ -102,7 +106,7 @@ const Home = () => {
                                                     <div className="proj_grid">
                                                         {projects.map(project => (
 
-                                                            <ProjectCard key={project.git_id} id={project.git_id} name={project.title} />
+                                                            <ProjectCard key={project.git_id} id={project.git_id} name={project.title} id2={project._id} />
 
                                                         ))}
 
@@ -118,7 +122,7 @@ const Home = () => {
                                         </Route>
                                         <Route path='/home/project/:roomId'>
                                             <div className="showmain">
-                                                <ProjectInfo projects={projects} token={token} onKen={ken} />
+                                                <ProjectInfo projects={projects} token={token} location='first' onKen={ken} />
 
                                             </div>
                                         </Route>
@@ -142,7 +146,7 @@ const Home = () => {
                                                 <div className="proj_grid">
                                                     {projects.map(project => (
 
-                                                        <ProjectCard key={project.git_id} id={project.git_id} name={project.title} />
+                                                        <ProjectCard key={project.git_id} id={project.git_id} name={project.title} id2={project._id} />
 
                                                     ))}
 
@@ -158,7 +162,7 @@ const Home = () => {
 
                                             <Route path='/home/project/:roomId'>
                                                 <div className="showmain">
-                                                    <ProjectInfo projects={projects} token={token} onKen={ken} />
+                                                    <ProjectInfo projects={projects} token={token} location='locate second' onKen={ken} />
 
                                                 </div>
                                             </Route>
