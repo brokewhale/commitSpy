@@ -34,22 +34,15 @@ const Home = () => {
 
         let project = res.data;
         let temp = projects
-        // console.log(temp);
-        // console.log(project);
+
 
         let ind = temp.findIndex(x => x._id === project._id)
-        // console.log(ind);
         temp.splice(ind, 1)
         setProjects([])
         setProjects(temp)
-        // console.log(temp);
 
-        // setProjects(temp)
-        // setLoad(true)
     }
-    // useEffect(() => {
-    //     setProjects(projects)
-    // }, [load])
+
 
     useEffect(() => {
         const axios = require('axios');

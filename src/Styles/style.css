@@ -395,6 +395,9 @@ a {
 }
 
 .chooseproj {
+  -webkit-box-flex: 0.5;
+      -ms-flex: 0.5;
+          flex: 0.5;
   background-color: #F1F5F8;
   border-radius: 15px;
   padding: 15px;
@@ -501,11 +504,22 @@ a {
   margin-top: 20px;
 }
 
-.projectinfo .settings h1 {
-  font-size: 23px;
-  padding-bottom: 15px;
+.projectinfo .settings__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-bottom: 1px solid gainsboro;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+}
+
+.projectinfo .settings__top h1 {
+  font-size: 23px;
 }
 
 .projectinfo .settings_info {
@@ -575,5 +589,21 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.edit_pop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px;
+  height: 50vh;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-radius: 10px;
+  background-color: #ccb9b9;
 }
 /*# sourceMappingURL=style.css.map */
