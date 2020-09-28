@@ -3,13 +3,15 @@
     place-items: center;
     height: 100vh;
 
-    a {
+    button {
         padding: 20px;
         color: black;
         border-radius: 8px;
         background-color: white;
         text-decoration-line: none;
         font-size: 1.1rem;
+        border: none;
+        cursor: pointer;
 
     }
 }

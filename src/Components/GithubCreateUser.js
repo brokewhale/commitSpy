@@ -1,9 +1,11 @@
 import React from 'react';
 import GitHubLogin from 'react-github-login';
+import { useState } from 'react';
 
 
 const GithubCreateUser = () => {
     require('dotenv').config()
+    const [code, Setcode] = useState('')
 
     // console.log(process.env.REACT_APP_CLIENT_ID);
 
@@ -11,6 +13,7 @@ const GithubCreateUser = () => {
 
     const onSuccessGithub = (response) => {
         console.log(response.code);
+        Setcode(response.code)
     }
     return (
         <div>

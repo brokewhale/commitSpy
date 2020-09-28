@@ -108,5 +108,61 @@
     height: 50vh;
     justify-content: space-around;
     border-radius: 10px;
-    background-color: #ccb9b9;
+    background-color: #d1d2d0;
+
+    .maxmin {
+        h3 {
+            font-weight: 500;
+        }
+
+        input {
+            border: none;
+            padding: 9px;
+            border-radius: 8px;
+        }
+    }
+
+    .alabill {
+        h3 {
+            font-weight: 500;
+        }
+
+        select {
+            display: block;
+            font-size: 16px;
+            font-family: sans-serif;
+            color: #444;
+
+        }
+    }
+
+    button {
+        border: 0;
+        padding: 5px;
+        border-radius: 8px;
+    }
+}
+
+.tweet {
+    display: none !important;
+
+}
+
+.show {
+    display: block !important;
+}
+
+.alarm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div {
+        display: flex;
+
+
+        .msg {
+            margin-right: 16px;
+        }
+    }
 }

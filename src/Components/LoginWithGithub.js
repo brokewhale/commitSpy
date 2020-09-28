@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useStateValue } from '../store/StateProvider';
 import { Redirect } from "react-router-dom";
+import GitHubLogin from 'react-github-login';
 
 
-const CreateUser = () => {
+
+const LoginWithGithub = () => {
     const [state, dispatch] = useStateValue();
     const [data, setData] = useState({ errorMessage: "", isLoading: false });
     const [access_token, setAccess_token] = useState('')
     const [scope, setScope] = useState('')
     const [token_type, setTokentype] = useState('')
+    require('dotenv').config()
+    const [code, setCode] = useState('')
+    const [gotcode, setGotcode] = useState(false)
 
 
 
@@ -18,12 +23,17 @@ const CreateUser = () => {
     const [userpass, setUserpass] = useState('');
     const [useremail, setUseremail] = useState('');
 
+    const onSuccessGithub = (response) => {
+        console.log(response.code);
+        setCode(response.code)
+        // setData({ ...data, errorMessage: "" });
+        // setGotcode(true)
 
 
-    useEffect(() => {
+
+
+
         // After requesting Github access, Github redirects back to your app with a code parameter
-        const url = window.location.href;
-        const hasCode = url.includes("?code=");
         const axios = require('axios');
         // const Sendpass =()=>{
 
@@ -31,40 +41,40 @@ const CreateUser = () => {
 
 
         // If Github API returns the code parameter
-        if (hasCode) {
-            const newUrl = url.split("?code=");
-            window.history.pushState({}, null, newUrl[0]);
-            setData({ ...data, isLoading: true });
 
 
-            // fetch user details with token
-            axios.post(`https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token`, {
-                client_id: state.client_id,
-                redirect_uri: state.redirect_uri,
-                client_secret: state.client_secret,
-                code: newUrl[1]
+
+        setData({ ...data, isLoading: true });
+
+
+        // fetch user details with token
+        axios.post(`https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token`, {
+            client_id: state.client_id,
+            redirect_uri: state.redirect_uri,
+            client_secret: state.client_secret,
+            code: code
+        })
+            .then(response => {
+                console.log(response)
+                // console.log(newUrl)
+
+                let params = new URLSearchParams(response.data);
+                setAccess_token(params.get("access_token"));
+                setScope(params.get("scope"));
+                setTokentype(params.get("token_type"))
+
+                setGetUserpass(true)
+
             })
-                .then(response => {
-                    console.log(response.data)
-                    console.log(newUrl)
 
-                    let params = new URLSearchParams(response.data);
-                    setAccess_token(params.get("access_token"));
-                    setScope(params.get("scope"));
-                    setTokentype(params.get("token_type"))
+            .catch(error => {
+                console.log(error);
+            });
 
-                    setGetUserpass(true)
 
-                })
-
-                .catch(error => {
-                    console.log(error);
-                });
-
-        }
 
         // const axios = require('axios');
-    }, [state, dispatch, data,]);
+    }
 
     const Sendpass = (e) => {
         const axios = require('axios');
@@ -119,18 +129,13 @@ const CreateUser = () => {
     } else {
         return (
             <div className='createuser'>
-                <button onClick={() => {
-                    window.location.href = `https://github.com/login/oauth/authorize?scope=user&client_id=${client_id}&redirect_uri=${redirect_uri}`;
-                    setData({ ...data, errorMessage: "" });
-                }}>Login with github</button>
-                {/* <a
-                    href={`https://github.com/login/oauth/authorize?scope=user&client_id=${client_id}&redirect_uri=${redirect_uri}`}
-                    onClick={() => {
-                        setData({ ...data, errorMessage: "" });
-                    }}
-                >
-                    <span>Login with GitHub</span>
-                </a> */}
+                <GitHubLogin clientId={process.env.REACT_APP_CLIENT_ID}
+                    onSuccess={onSuccessGithub}
+                    buttonText="LOGIN WITH GITHUB"
+                    className="git-login"
+                    valid={true}
+                    redirectUri={process.env.REACT_APP_REDIRECT_URI}
+                />
             </div>
         )
     }
@@ -139,4 +144,4 @@ const CreateUser = () => {
 
 };
 
-export default CreateUser;
+export default LoginWithGithub;

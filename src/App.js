@@ -5,6 +5,8 @@ import CreateUser from './Components/CreateUser';
 import Home from './Components/Home';
 import Wellcome from './Components/Wellcome'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import GithubCreateUser from './Components/GithubCreateUser';
+import LoginWithGithub from './Components/LoginWithGithub';
 
 
 function App() {
@@ -16,7 +18,9 @@ function App() {
 
 
           <Route path='/login'>
+            {/* <GithubCreateUser /> */}
             <CreateUser />
+            {/* <LoginWithGithub /> */}
 
           </Route>
 
