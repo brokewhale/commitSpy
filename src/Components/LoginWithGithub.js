@@ -73,7 +73,6 @@ const LoginWithGithub = () => {
 
 
 
-        // const axios = require('axios');
     }
 
     const Sendpass = (e) => {
