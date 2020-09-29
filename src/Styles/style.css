@@ -361,6 +361,13 @@ a {
   background-color: #606896;
 }
 
+.home-loading {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  height: 95vh;
+}
+
 .projectcard {
   width: 85px;
 }
@@ -383,7 +390,7 @@ a {
           flex-direction: column;
   font-size: 19px;
   margin-bottom: 20px;
-  background-color: #c723f0;
+  background-color: #354376;
   text-transform: uppercase;
   border-radius: 16px;
 }
@@ -399,7 +406,7 @@ a {
   right: 20px;
   width: 45px;
   height: 45px;
-  background-color: blueviolet;
+  background-color: #354376;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -411,8 +418,8 @@ a {
           justify-content: center;
   border-radius: 12px;
   cursor: pointer;
-  -webkit-box-shadow: -1px 0px 13px -1px blueviolet;
-          box-shadow: -1px 0px 13px -1px blueviolet;
+  -webkit-box-shadow: -1px 0px 13px -1px #354376;
+          box-shadow: -1px 0px 13px -1px #354376;
 }
 
 .createbtn svg {
@@ -457,6 +464,13 @@ a {
 .chooseproj {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.loading {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  height: 95vh;
 }
 
 .listrepos {

@@ -8,9 +8,10 @@ import { IconButton } from '@material-ui/core';
 import { useState } from 'react';
 import { Redirect } from "react-router-dom";
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import Popup from 'reactjs-popup';
 import { Twitter } from '@material-ui/icons';
+import Loader from 'react-loader-spinner'
+
 
 
 
@@ -49,7 +50,9 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
         })
 
 
-    }, [test])
+    },
+        // eslint-disable-next-line  
+        [test, roomId,])
     let date = new Date(proj.trigger);
     let deadline = date.toDateString()
     // let maxtest = Math.floor((proj / 1000) / (86400))
@@ -188,7 +191,11 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
         );
     } else {
         return (
-            <h1>loading</h1>
+            <div className="loading">
+
+                <Loader type="Rings" color="#354376" height={130} width={130} />
+            </div>
+
         )
     }
 };

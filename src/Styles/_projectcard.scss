@@ -1,3 +1,6 @@
+//Set count variable here
+// $count: 10;
+
 .projectcard {
     width: 85px;
 
@@ -12,7 +15,8 @@
         flex-direction: column;
         font-size: 19px;
         margin-bottom: 20px;
-        background-color: rgb(199, 35, 240);
+        background-color: #354376;
+        // background-color: rgb(random(255), random(255), random(255));
         text-transform: uppercase;
 
         border-radius: 16px;
@@ -24,3 +28,11 @@
         width: 85px;
     }
 }
+
+// @for $i from 1 through $count {
+//     .projectcard div {
+//         &:nth-child(#{$i}) {
+//             background-color: rgb(random(255), random(255), random(255));
+//         }
+//     }
+// }

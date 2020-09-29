@@ -9,6 +9,7 @@ import CreateBtn from './CreateBtn';
 import Chooseproj from './Chooseproj';
 import { useState } from 'react';
 import ProjectInfo from './ProjectInfo';
+import Loader from 'react-loader-spinner'
 
 
 
@@ -19,7 +20,6 @@ const Home = () => {
     const [me, setMe] = useState({});
     const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [load, setLoad] = useState(false);
 
 
     // console.log(token);
@@ -97,6 +97,7 @@ const Home = () => {
                                                 <div className="info__projects">
                                                     <h3>Projects <span>({projects.length})</span></h3>
                                                     <div className="proj_grid">
+                                                        <h2 className={projects.length <= 0 ? 'show' : 'tweet'}>You have no project added</h2>
                                                         {projects.map(project => (
 
                                                             <ProjectCard key={project.git_id} id={project.git_id} name={project.title} id2={project._id} />
@@ -172,8 +173,15 @@ const Home = () => {
         );
     } else {
         return (
-            <div className="home">
-                <h1>Loading</h1>
+            <div className="home-loading">
+                <Loader
+                    type="Puff"
+                    color="cornflowerblue"
+                    height={100}
+                    width={100}
+                // timeout={3000} //3 secs
+
+                />
             </div>
         )
     }

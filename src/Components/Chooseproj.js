@@ -3,6 +3,8 @@ import { useStateValue } from '../store/StateProvider';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import ListRepos from './ListRepos';
+import Loader from 'react-loader-spinner'
+
 
 
 const Chooseproj = ({ onTee }) => {
@@ -56,8 +58,9 @@ const Chooseproj = ({ onTee }) => {
     } else {
 
         return (
-            <div className='chooseproj'>
-                <h1>Loading....</h1>
+            <div className='chooseproj loading'>
+                {/* <h3>loading</h3> */}
+                <Loader type="Rings" color="#354376" height={130} width={130} />
             </div>
         );
     }
