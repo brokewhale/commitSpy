@@ -1,0 +1,41 @@
+.forgetpass {
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+
+    .container {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px;
+        border-radius: 8px;
+
+        input {
+            margin-bottom: 16px;
+            padding: .75rem 1rem;
+            min-width: 100%;
+            border-radius: .375rem;
+            appearance: none;
+            border: 1px solid #e2e8f0;
+
+            &::placeholder {
+                color: #080b13;
+            }
+        }
+
+        button {
+            border: none;
+            padding: .75rem 1rem;
+            width: 100%;
+            vertical-align: top;
+            border-radius: .375rem;
+            font-weight: 500;
+            cursor: pointer;
+            font-size: 100%;
+            color: white;
+            background-color: #1c3faa;
+        }
+    }
+}

@@ -204,6 +204,19 @@ a {
 .login .grid__container .form__container .login__form .form__btn .signup_btn {
   color: #4a5568;
   border: 1px solid #e2e8f0;
+  padding: .75rem 1rem;
+  width: 100%;
+  vertical-align: top;
+  border-radius: .375rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 0.75rem;
+  font-size: 100%;
+}
+
+.login .grid__container .form__container .forget {
+  color: #1344b9;
+  cursor: pointer;
 }
 
 .login .grid__container .form__container .footer {
@@ -706,5 +719,69 @@ a {
 
 .alarm div .msg {
   margin-right: 16px;
+}
+
+.forgetpass {
+  height: 100vh;
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.forgetpass .container {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.forgetpass .container input {
+  margin-bottom: 16px;
+  padding: .75rem 1rem;
+  min-width: 100%;
+  border-radius: .375rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid #e2e8f0;
+}
+
+.forgetpass .container input::-webkit-input-placeholder {
+  color: #080b13;
+}
+
+.forgetpass .container input:-ms-input-placeholder {
+  color: #080b13;
+}
+
+.forgetpass .container input::-ms-input-placeholder {
+  color: #080b13;
+}
+
+.forgetpass .container input::placeholder {
+  color: #080b13;
+}
+
+.forgetpass .container button {
+  border: none;
+  padding: .75rem 1rem;
+  width: 100%;
+  vertical-align: top;
+  border-radius: .375rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 100%;
+  color: white;
+  background-color: #1c3faa;
 }
 /*# sourceMappingURL=style.css.map */

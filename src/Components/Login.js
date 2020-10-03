@@ -2,6 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import { useStateValue } from '../store/StateProvider';
 import { Redirect } from "react-router-dom";
+import { Link } from 'react-router-dom';
+
 
 
 const Login = () => {
@@ -46,6 +48,7 @@ const Login = () => {
 
     }
 
+
     if (state.isLoggedIn) {
         return <Redirect to="/home" />;
     }
@@ -70,9 +73,12 @@ const Login = () => {
                         <div className="form__btn">
 
                             <button className='login_btn' onClick={Sendlogin}>Login</button>
-                            <button className='signup_btn' >Sign up</button>
+                            <Link to='/login' className='signup_btn' >Sign up</Link>
                         </div>
                     </form>
+                    < Link to='/forgetpass' className="forget">
+                        forget password?
+                    </Link >
 
 
                     <div className="footer">
