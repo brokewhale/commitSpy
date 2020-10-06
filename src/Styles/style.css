@@ -280,9 +280,26 @@ a {
   }
 }
 
-.home_grid .info .name {
+.home_grid .info-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 40px;
+}
+
+.home_grid .info-top .name {
   font-size: 33px;
-  margin-bottom: 15px;
+}
+
+.home_grid .info-top .MuiAvatar-root {
+  width: 35px;
+  height: 35px;
 }
 
 .home_grid .info .greetings {
@@ -301,9 +318,21 @@ a {
   margin-top: 80px;
 }
 
+@media (max-width: 40em) {
+  .home_grid .info__projects {
+    margin-top: 60px;
+  }
+}
+
 .home_grid .info__projects h3 {
   font-size: 18px;
   margin-bottom: 30px;
+}
+
+@media (max-width: 40em) {
+  .home_grid .info__projects h3 {
+    margin-left: 16px;
+  }
 }
 
 .home_grid .info__projects h3 span {

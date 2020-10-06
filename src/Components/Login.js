@@ -84,7 +84,7 @@ const Login = () => {
                     <div className="footer">
                         By signing up, you agree to our
                         <br />
-                        <span>Terms and Conditions</span> & <span>Privacy Policy</span>
+                        <span>Terms and Conditions</span> & <span >Privacy Policy</span>
                     </div>
                 </div>
             </div>

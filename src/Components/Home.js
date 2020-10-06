@@ -10,6 +10,10 @@ import Chooseproj from './Chooseproj';
 import { useState } from 'react';
 import ProjectInfo from './ProjectInfo';
 import Loader from 'react-loader-spinner'
+import { Avatar } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import User from './User';
+
 
 
 
@@ -91,7 +95,11 @@ const Home = () => {
                                     <Switch>
                                         <Route exact path='/home'>
                                             <div className="info">
-                                                <h1 className='name'>{`Hi ${me.user.username}`}</h1>
+                                                <div className="info-top">
+                                                    <h1 className='name'>{`Hi ${me.user.username}`}</h1>
+                                                    <Link to='/home/user'> <Avatar className='logo' alt="name" src={me.user.avatar} /></Link>
+
+                                                </div>
                                                 <p className='greetings'>Welcome back to workspace, we missed you</p>
 
                                                 <div className="info__projects">
@@ -120,6 +128,9 @@ const Home = () => {
 
                                             </div>
                                         </Route>
+                                        <Route path='/home/user' >
+                                            <User token={token} />
+                                        </Route>
 
                                     </Switch>
 
@@ -132,7 +143,12 @@ const Home = () => {
 
                                     <div className="home_grid">
                                         <div className="info">
-                                            <h1 className='name'>{`Hi ${me.user.username}`}</h1>
+                                            <div className="info-top">
+                                                <h1 className='name'>{`Hi ${me.user.username}`}</h1>
+                                                <Link to='/home/user'> <Avatar className='logo' alt="name" src={me.user.avatar} /></Link>
+
+
+                                            </div>
                                             <p className='greetings'>Welcome back to workspace, we missed you</p>
 
                                             <div className="info__projects">
@@ -160,6 +176,10 @@ const Home = () => {
 
                                                 </div>
                                             </Route>
+                                            <Route path='/home/user' >
+                                                <User token={token} />
+                                            </Route>
+
 
                                         </Switch>
 
