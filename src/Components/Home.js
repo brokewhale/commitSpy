@@ -129,7 +129,8 @@ const Home = () => {
                                             </div>
                                         </Route>
                                         <Route path='/home/user' >
-                                            <User token={token} />
+                                            <User token={token} name={me.user.username} img={me.user.avatar} />
+
                                         </Route>
 
                                     </Switch>
@@ -177,7 +178,7 @@ const Home = () => {
                                                 </div>
                                             </Route>
                                             <Route path='/home/user' >
-                                                <User token={token} />
+                                                <User token={token} name={me.user.username} img={me.user.avatar} />
                                             </Route>
 
 
