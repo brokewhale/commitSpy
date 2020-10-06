@@ -44,9 +44,16 @@
                     font-size: 33px;
                 }
 
-                .MuiAvatar-root {
-                    width: 35px;
-                    height: 35px;
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    svg {
+                        margin-top: 10px;
+                        width: 40px !important;
+                        height: 40px !important;
+                    }
                 }
 
 

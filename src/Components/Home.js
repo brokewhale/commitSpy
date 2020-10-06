@@ -10,10 +10,10 @@ import Chooseproj from './Chooseproj';
 import { useState } from 'react';
 import ProjectInfo from './ProjectInfo';
 import Loader from 'react-loader-spinner'
-import { Avatar } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import User from './User';
 import { Redirect } from "react-router-dom";
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 
 
@@ -109,7 +109,7 @@ const Home = () => {
                                             <div className="info">
                                                 <div className="info-top">
                                                     <h1 className='name'>{`Hi ${me.user.username}`}</h1>
-                                                    <Link to='/home/user'> <Avatar className='logo' alt="name" src={me.user.avatar} /></Link>
+                                                    <Link to='/home/user'> <AccountCircleIcon /></Link>
 
                                                 </div>
                                                 <p className='greetings'>Welcome back to workspace, we missed you</p>
@@ -158,7 +158,7 @@ const Home = () => {
                                         <div className="info">
                                             <div className="info-top">
                                                 <h1 className='name'>{`Hi ${me.user.username}`}</h1>
-                                                <Link to='/home/user'> <Avatar className='logo' alt="name" src={me.user.avatar} /></Link>
+                                                <Link to='/home/user'> <AccountCircleIcon /></Link>
 
 
                                             </div>

@@ -329,9 +329,22 @@ a {
   font-size: 33px;
 }
 
-.home_grid .info-top .MuiAvatar-root {
-  width: 35px;
-  height: 35px;
+.home_grid .info-top a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home_grid .info-top a svg {
+  margin-top: 10px;
+  width: 40px !important;
+  height: 40px !important;
 }
 
 .home_grid .info .greetings {

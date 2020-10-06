@@ -60,20 +60,22 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
     // let maxtest = Math.floor((proj / 1000) / (86400))
 
     const deleteProject = () => {
+        if (window.confirm('are you sure you want to delete')) {
 
-        const axios = require('axios');
-        axios.delete(`https://commitspy.herokuapp.com/api/project/projects/${proj._id}`, {
-            headers: { 'authorization': `Bearer ${token}` }
-        }).then(function (response) {
-            console.log(response);
-            onKen(response)
-            setDone2(true)
+            const axios = require('axios');
+            axios.delete(`https://commitspy.herokuapp.com/api/project/projects/${proj._id}`, {
+                headers: { 'authorization': `Bearer ${token}` }
+            }).then(function (response) {
+                console.log(response);
+                onKen(response)
+                setDone2(true)
 
 
-        }).catch(err => {
-            console.log(err);
-        })
-        console.log('clicked');
+            }).catch(err => {
+                console.log(err);
+            })
+            console.log('clicked');
+        }
     }
 
     if (done2) {
