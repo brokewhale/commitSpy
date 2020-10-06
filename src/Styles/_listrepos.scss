@@ -9,6 +9,7 @@
     transition-timing-function: cubic-bezier(.4, 0, .2, 1);
     transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
     transition-duration: 0.5s;
+    cursor: pointer;
 
     &:hover {
 

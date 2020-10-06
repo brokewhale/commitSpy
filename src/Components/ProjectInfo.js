@@ -28,6 +28,7 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
     const [billing, setBilling] = useState(false);
     const [test, setTest] = useState(false)
     const [tweet, setTweet] = useState(0)
+    const [btnload, setBtnload] = useState(false)
 
     const [proj, setProj] = useState({})
     const { roomId } = useParams();
@@ -81,7 +82,9 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
     let realtime = Math.floor((maxtime * 1000) * (86400))
     let realalarm = Number(alarm)
     let realbilling = Boolean(Number(billing))
+
     const getEdit = () => {
+        setBtnload(true)
 
         let project = {
             _id: roomId,
@@ -99,6 +102,7 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
             setTweet(realalarm)
 
             setTest(o => !o)
+            setBtnload(false)
             closeModal()
 
 
@@ -180,7 +184,7 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
                             </select>
                         </div>
 
-                        <button onClick={getEdit}>Submit</button>
+                        <button onClick={getEdit}>Submit {btnload && <p>loading</p>}</button>
                         <button onClick={closeModal}>Cancle</button>
 
 

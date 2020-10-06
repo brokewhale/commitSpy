@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Avatar } from '@material-ui/core';
+import PaymentIcon from '@material-ui/icons/Payment';
 
 
-const User = ({ name, img, email }) => {
+
+const User = ({ name, img, email, projects }) => {
 
     // useEffect(() => {
     //     const axios = require('axios');
@@ -23,10 +25,29 @@ const User = ({ name, img, email }) => {
     //     // eslint-disable-next-line  
     //     [])
     return (
-        <div className='chooseproj user'>
-            <Avatar className='logo' alt="name" src={img} />
-            <h1>{name}</h1>
-            <p>{email}</p>
+        <div className='chooseproj '>
+            <div className="user">
+                <Avatar className='logo' alt="name" src={img} />
+                <h1>{name}</h1>
+                <p>{email}</p>
+
+                <div className="userparams">
+                    <div className="noofproj card">
+                        <p>{projects}</p>
+                        <h3>projects</h3>
+                    </div>
+                    <div className="divide"></div>
+                    <div className="amounti card">
+                        <p>#200</p>
+                        <h3>wallet</h3>
+                    </div>
+                </div>
+                <div className="addmoney">
+                    <h3>Add money</h3>
+                    <PaymentIcon />
+                </div>
+
+            </div>
         </div>
     );
 };
