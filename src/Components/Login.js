@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { useStateValue } from '../store/StateProvider';
 import { Redirect } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
 
 
 
@@ -13,10 +15,13 @@ const Login = () => {
     // eslint-disable-next-line 
     const [state, dispatch] = useStateValue();
     const [data, setData] = useState({ errorMessage: "", isLoading: false });
+    const [btnload, setBtnload] = useState(false)
+
 
 
     const Sendlogin = (e) => {
         e.preventDefault();
+        setBtnload(true)
         setData({ ...data, errorMessage: "" })
         // console.log('clicked');
 
@@ -36,6 +41,8 @@ const Login = () => {
                     type: "LOGIN",
                     payload: { token: response.data.user.token, isLoggedIn: true }
                 });
+                setBtnload(false)
+
             })
             .catch(function (error) {
                 console.log(error);
@@ -72,7 +79,7 @@ const Login = () => {
                         <input className='pinput' type="password" placeholder='password' value={pass} onChange={e => setPass(e.target.value)} />
                         <div className="form__btn">
 
-                            <button className='login_btn' onClick={Sendlogin}>Login</button>
+                            <button className='login_btn' onClick={Sendlogin}>Login {btnload && <CircularProgress />}</button>
                             <Link to='/login' className='signup_btn' >Sign up</Link>
                         </div>
                     </form>

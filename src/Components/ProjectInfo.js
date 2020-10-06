@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 import Popup from 'reactjs-popup';
 import { Twitter } from '@material-ui/icons';
 import Loader from 'react-loader-spinner'
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 
@@ -184,7 +185,7 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
                             </select>
                         </div>
 
-                        <button onClick={getEdit}>Submit {btnload && <p>loading</p>}</button>
+                        <button onClick={getEdit}>Submit {btnload && <CircularProgress />}</button>
                         <button onClick={closeModal}>Cancle</button>
 
 

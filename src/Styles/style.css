@@ -97,6 +97,22 @@ a {
   font-size: 100%;
   color: white;
   background-color: #1c3faa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.getpass_container button .MuiCircularProgress-root {
+  width: 15px !important;
+  height: 15px !important;
+  margin-left: 9px;
+  color: white;
 }
 
 .login {
@@ -199,6 +215,22 @@ a {
 .login .grid__container .form__container .login__form .form__btn .login_btn {
   color: white;
   background-color: #1c3faa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login .grid__container .form__container .login__form .form__btn .login_btn .MuiCircularProgress-root {
+  width: 15px !important;
+  height: 15px !important;
+  margin-left: 9px;
+  color: white;
 }
 
 .login .grid__container .form__container .login__form .form__btn .signup_btn {
@@ -719,6 +751,21 @@ a {
   border: 0;
   padding: 5px;
   border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.edit_pop button .MuiCircularProgress-root {
+  width: 15px !important;
+  height: 15px !important;
+  margin-left: 9px;
 }
 
 .tweet {

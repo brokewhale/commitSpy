@@ -74,6 +74,17 @@
                     .login_btn {
                         color: white;
                         background-color: #1c3faa;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        .MuiCircularProgress-root {
+                            width: 15px !important;
+                            height: 15px !important;
+                            margin-left: 9px;
+                            color: white;
+
+                        }
                     }
 
                     .signup_btn {

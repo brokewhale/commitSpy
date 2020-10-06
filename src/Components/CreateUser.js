@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useStateValue } from '../store/StateProvider';
 import { Redirect } from "react-router-dom";
+import CircularProgress from '@material-ui/core/CircularProgress';
+
 
 
 const CreateUser = () => {
@@ -9,6 +11,8 @@ const CreateUser = () => {
     const [access_token, setAccess_token] = useState('')
     const [scope, setScope] = useState('')
     const [token_type, setTokentype] = useState('')
+    const [btnload, setBtnload] = useState(false)
+
 
 
 
@@ -68,6 +72,7 @@ const CreateUser = () => {
 
     const Sendpass = (e) => {
         const axios = require('axios');
+        setBtnload(true)
         e.preventDefault();
         axios.post('https://commitspy.herokuapp.com/api/users/regtoken',
 
@@ -87,6 +92,8 @@ const CreateUser = () => {
                     type: "LOGIN",
                     payload: { token: response.data.user.token, isLoggedIn: true }
                 });
+                setBtnload(false)
+
             })
             .catch(function (error) {
                 console.log(error);
@@ -108,7 +115,7 @@ const CreateUser = () => {
 
                     <input type="email" placeholder='enter your email' value={useremail} onChange={e => setUseremail(e.target.value)} />
                     <input type="password" placeholder='enter your password' value={userpass} onChange={e => setUserpass(e.target.value)} />
-                    <button onClick={Sendpass}>Register</button>
+                    <button onClick={Sendpass}>Register {btnload && <CircularProgress />}</button>
                 </div>
 
             </div>
@@ -120,17 +127,11 @@ const CreateUser = () => {
         return (
             <div className='createuser'>
                 <button onClick={() => {
+                    setBtnload(true)
                     window.location.href = `https://github.com/login/oauth/authorize?scope=user&client_id=${client_id}&redirect_uri=${redirect_uri}`;
                     setData({ ...data, errorMessage: "" });
-                }}>Login with github</button>
-                {/* <a
-                    href={`https://github.com/login/oauth/authorize?scope=user&client_id=${client_id}&redirect_uri=${redirect_uri}`}
-                    onClick={() => {
-                        setData({ ...data, errorMessage: "" });
-                    }}
-                >
-                    <span>Login with GitHub</span>
-                </a> */}
+                }}> {!btnload && <span> Register with github</span>} {btnload && <CircularProgress />}</button>
+
             </div>
         )
     }

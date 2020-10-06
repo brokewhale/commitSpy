@@ -13,6 +13,8 @@ import Loader from 'react-loader-spinner'
 import { Avatar } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import User from './User';
+import { Redirect } from "react-router-dom";
+
 
 
 
@@ -24,6 +26,8 @@ const Home = () => {
     const [me, setMe] = useState({});
     const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [notoken, setNontoken] = useState(false)
+
 
 
     // console.log(token);
@@ -68,12 +72,20 @@ const Home = () => {
                 console.log(data2.data.project);
                 setLoading(true)
             }));
+        } else {
+            setNontoken(true)
+            // return <Redirect to='/signin' />
+            // console.log('not token');
         }
 
 
     },
         // eslint-disable-next-line
         [])
+
+    if (notoken) {
+        return <Redirect to="/signin" />;
+    }
 
 
 
