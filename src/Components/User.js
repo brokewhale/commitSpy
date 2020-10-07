@@ -20,6 +20,8 @@ const User = ({ token, name, img, email, projects, wallet }) => {
     const closeModal = () => {
         setOpen(false);
         setAmount('')
+        setBtnload(false)
+
     }
 
     const sendpayment = () => {
@@ -53,28 +55,26 @@ const User = ({ token, name, img, email, projects, wallet }) => {
 
     // }
     return (
-        <div className='chooseproj '>
-            <div className="user">
-                <Avatar className='logo' alt="name" src={img} />
-                <h1>{name}</h1>
-                <p>{email}</p>
 
-                <div className="userparams">
-                    <div className="noofproj card">
-                        <p>{projects}</p>
-                        <h3>projects</h3>
-                    </div>
-                    <div className="divide"></div>
-                    <div className="amounti card">
-                        <p><span>&#8358;</span>  {wallet}</p>
-                        <h3>wallet</h3>
-                    </div>
-                </div>
-                <div className="addmoney" onClick={() => setOpen(o => !o)}>
-                    <h3>Add money</h3>
-                    <PaymentIcon />
-                </div>
+        <div className="user">
+            <Avatar className='logo' alt="name" src={img} />
+            <h1>{name}</h1>
+            <p>{email}</p>
 
+            <div className="userparams">
+                <div className="noofproj card">
+                    <p>{projects}</p>
+                    <h3>projects</h3>
+                </div>
+                <div className="divide"></div>
+                <div className="amounti card">
+                    <p><span>&#8358;</span>  {wallet}</p>
+                    <h3>wallet</h3>
+                </div>
+            </div>
+            <div className="addmoney" onClick={() => setOpen(o => !o)}>
+                <h3>Add money</h3>
+                <PaymentIcon />
             </div>
 
             <Popup open={open} closeOnDocumentClick onClose={closeModal}  >
@@ -86,7 +86,7 @@ const User = ({ token, name, img, email, projects, wallet }) => {
 
                 </div> */}
                 <form className='pay_pop' noValidate autoComplete="off">
-                    <TextField id="outlined-basic" size='small' value={amount} onChange={e => setAmount(e.target.value)} label="Enter Amount" variant="outlined" />
+                    <TextField id="outlined-basic" size='small' value={amount} onChange={e => setAmount(e.target.value)} label="Enter Amount (₦)" variant="outlined" />
                     <Button
                         variant="outlined"
                         color="default"
@@ -107,6 +107,8 @@ const User = ({ token, name, img, email, projects, wallet }) => {
 
             </Popup>
         </div>
+
+
     );
 };
 

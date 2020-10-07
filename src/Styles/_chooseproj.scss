@@ -5,6 +5,7 @@
     padding: 15px;
     overflow: scroll;
     height: 97vh;
+    overflow-x: hidden;
 
 
     @include breakpoint-down(medium) {
