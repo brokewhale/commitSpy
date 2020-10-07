@@ -45,6 +45,7 @@
         // justify-self: center;
         padding: 20px;
         color: white;
+        cursor: pointer;
         background-color: #354376;
         box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(4, 29, 61, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 
@@ -72,4 +73,69 @@
     p {
         margin-bottom: 7px;
     }
+}
+
+.pay_pop {
+
+
+    background-color: #D0DBF2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 8px;
+
+    .MuiFormControl-root {
+        margin-bottom: 16px;
+    }
+
+    button:not(:last-child) {
+        margin-bottom: 8px;
+
+        .MuiCircularProgress-root {
+            width: 15px !important;
+            height: 15px !important;
+            margin-left: 9px;
+            color: black;
+
+        }
+    }
+
+    // input {
+    //     margin-bottom: 16px;
+    //     padding: .75rem 1rem;
+    //     min-width: 100%;
+    //     border-radius: .375rem;
+    //     appearance: none;
+    //     border: 1px solid #e2e8f0;
+
+    //     &::placeholder {
+    //         color: #080b13;
+    //     }
+    // }
+
+    // button {
+    //     border: none;
+    //     padding: .75rem 1rem;
+    //     width: 100%;
+    //     vertical-align: top;
+    //     border-radius: .375rem;
+    //     font-weight: 500;
+    //     cursor: pointer;
+    //     font-size: 100%;
+    //     color: white;
+    //     background-color: #1c3faa;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     margin-bottom: 10px;
+
+    //     .MuiCircularProgress-root {
+    //         width: 15px !important;
+    //         height: 15px !important;
+    //         margin-left: 9px;
+
+    //     }
+    // }
+
 }

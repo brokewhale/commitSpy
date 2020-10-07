@@ -1,29 +1,57 @@
 import React from 'react';
 import { Avatar } from '@material-ui/core';
 import PaymentIcon from '@material-ui/icons/Payment';
+import Popup from 'reactjs-popup';
+import { useState } from 'react';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import { CancelOutlined } from '@material-ui/icons';
 
 
 
-const User = ({ name, img, email, projects }) => {
-
-    // useEffect(() => {
-    //     const axios = require('axios');
 
 
-    //     axios.get(`https://commitspy.herokuapp.com/api/users/me`, {
-    //         headers: { 'authorization': `Bearer ${token}` }
-    //     }).then(function (response) {
-    //         console.log(response);
-    //         setMe(response.data)
 
-    //     }).catch(err => {
-    //         console.log(err);
-    //     })
+const User = ({ token, name, img, email, projects, wallet }) => {
+    const [open, setOpen] = useState(false);
+    const [amount, setAmount] = useState('')
+    const [btnload, setBtnload] = useState(false)
+    const closeModal = () => {
+        setOpen(false);
+        setAmount('')
+    }
+
+    const sendpayment = () => {
+        setBtnload(true)
+        let payment = {
+            amount: amount * 100,
+            currency: 'NGN'
+        }
+        let data = { payment };
+        const axios = require('axios');
+        axios.post(`https://commitspy.herokuapp.com/api/payment/init`, data, {
+            headers: { 'authorization': `Bearer ${token}` }
+        }).then(function (response) {
+            console.log(response.data.authorization_url);
+            window.location.href = response.data.authorization_url
+
+            setAmount('')
+            setBtnload(false)
 
 
-    // },
-    //     // eslint-disable-next-line  
-    //     [])
+
+
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+    // if (done) {
+
+
+    //     return <Redirect to="www.google.com" />;
+
+    // }
     return (
         <div className='chooseproj '>
             <div className="user">
@@ -38,16 +66,46 @@ const User = ({ name, img, email, projects }) => {
                     </div>
                     <div className="divide"></div>
                     <div className="amounti card">
-                        <p>#200</p>
+                        <p><span>&#8358;</span>  {wallet}</p>
                         <h3>wallet</h3>
                     </div>
                 </div>
-                <div className="addmoney">
+                <div className="addmoney" onClick={() => setOpen(o => !o)}>
                     <h3>Add money</h3>
                     <PaymentIcon />
                 </div>
 
             </div>
+
+            <Popup open={open} closeOnDocumentClick onClose={closeModal}  >
+                {/* <div className='pay_pop'>
+                    <input type="text" placeholder="Enter amount you want to add" value={amount} onChange={e => setAmount(e.target.value)} />
+                    <button onClick={sendpayment}>Submit {btnload && <CircularProgress />}</button>
+                    <button onClick={closeModal}>Cancle</button>
+
+
+                </div> */}
+                <form className='pay_pop' noValidate autoComplete="off">
+                    <TextField id="outlined-basic" size='small' value={amount} onChange={e => setAmount(e.target.value)} label="Enter Amount" variant="outlined" />
+                    <Button
+                        variant="outlined"
+                        color="default"
+                        startIcon={<PaymentIcon />}
+                        onClick={sendpayment}
+                    >
+                        {!btnload && <span> PAY</span>} {btnload && <CircularProgress />}
+                    </Button>
+                    <Button
+                        variant="outlined"
+                        color="default"
+                        startIcon={<CancelOutlined />}
+                        onClick={closeModal}
+                    >
+                        CANCLE
+                    </Button>
+                </form>
+
+            </Popup>
         </div>
     );
 };

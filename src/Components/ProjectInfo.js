@@ -74,7 +74,6 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
             }).catch(err => {
                 console.log(err);
             })
-            console.log('clicked');
         }
     }
 
