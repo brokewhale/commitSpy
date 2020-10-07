@@ -877,7 +877,7 @@ a {
 }
 
 .user {
-  color: gray;
+  color: #354376;
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -897,7 +897,7 @@ a {
   position: relative;
 }
 
-@media (max-width: 64em) {
+@media (max-width: 40em) {
   .user .userparams {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -918,7 +918,7 @@ a {
   opacity: 0.5;
 }
 
-@media (max-width: 64em) {
+@media (max-width: 40em) {
   .user .userparams .divide {
     position: unset;
   }
@@ -928,7 +928,7 @@ a {
   margin-right: 125px;
 }
 
-@media (max-width: 64em) {
+@media (max-width: 40em) {
   .user .userparams .noofproj {
     margin-right: 0;
   }
@@ -972,7 +972,7 @@ a {
   padding: 10px;
   border-radius: 8px;
   background-color: #f1f5f8;
-  color: gray;
+  color: #354376;
   width: 85px;
   height: 70px;
 }
