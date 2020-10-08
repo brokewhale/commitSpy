@@ -7,13 +7,14 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { CancelOutlined } from '@material-ui/icons';
+import ChartTotal from './ChartTotal'
 
 
 
 
 
 
-const User = ({ token, name, img, email, projects, wallet }) => {
+const User = ({ token, name, img, email, projects, wallet, proj }) => {
     const [open, setOpen] = useState(false);
     const [amount, setAmount] = useState('')
     const [btnload, setBtnload] = useState(false)
@@ -76,6 +77,7 @@ const User = ({ token, name, img, email, projects, wallet }) => {
                 <h3>Add money</h3>
                 <PaymentIcon />
             </div>
+            <ChartTotal projects={proj} />
 
             <Popup open={open} closeOnDocumentClick onClose={closeModal}  >
                 {/* <div className='pay_pop'>

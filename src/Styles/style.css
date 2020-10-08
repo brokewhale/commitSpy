@@ -812,6 +812,11 @@ a {
   margin-right: 16px;
 }
 
+.chart-container {
+  margin: 0 auto;
+  max-width: 960px;
+}
+
 .forgetpass {
   height: 100vh;
   margin: 0;
@@ -884,9 +889,10 @@ a {
 }
 
 .user .MuiAvatar-root {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   margin-bottom: 16px;
+  margin-top: 10px;
 }
 
 .user .userparams {
@@ -971,7 +977,6 @@ a {
           flex-direction: column;
   padding: 10px;
   border-radius: 8px;
-  background-color: #f1f5f8;
   color: #354376;
   width: 85px;
   height: 70px;

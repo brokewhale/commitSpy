@@ -4,9 +4,10 @@
     place-items: center;
 
     .MuiAvatar-root {
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
         margin-bottom: 16px;
+        margin-top: 10px;
     }
 
     .userparams {
@@ -81,9 +82,6 @@
     flex-direction: column;
     padding: 10px;
     border-radius: 8px;
-    background-color: #f1f5f8;
-    // box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-    // transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     color: #354376;
     width: 85px;
     height: 70px;
