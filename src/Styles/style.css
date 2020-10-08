@@ -882,17 +882,17 @@ a {
 }
 
 .user {
+  overflow: scroll;
   color: #354376;
   display: -ms-grid;
   display: grid;
   place-items: center;
+  height: 97vh;
 }
 
 .user .MuiAvatar-root {
-  width: 150px;
-  height: 150px;
-  margin-bottom: 16px;
-  margin-top: 10px;
+  width: 200px;
+  height: 200px;
 }
 
 .user .userparams {

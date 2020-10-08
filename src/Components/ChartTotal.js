@@ -65,7 +65,7 @@ const Chart = ({ projects }) => {
     }, [projects])
     return (
         <div className='chart-container'>
-            <Line data={dataChart} />
+            <Line data={dataChart} width={300} height={192} />
         </div>
     );
 };

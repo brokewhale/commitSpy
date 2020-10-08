@@ -1,18 +1,28 @@
 .user {
+    overflow: scroll;
     color: #354376;
     display: grid;
     place-items: center;
+    height: 97vh;
+
+    // h1 {
+    //     margin-top: -39px;
+    // }
+
+    // p {
+    //     margin-top: -39px;
+    // }
 
     .MuiAvatar-root {
-        width: 150px;
-        height: 150px;
-        margin-bottom: 16px;
-        margin-top: 10px;
+        width: 200px;
+        height: 200px;
+
     }
 
     .userparams {
         padding: 20px;
         display: flex;
+        // margin-top: -41px;
 
         position: relative;
 
@@ -54,6 +64,7 @@
     }
 
     .addmoney {
+        // margin-top: -41px;
         display: flex;
         justify-content: space-between;
         align-items: center;
