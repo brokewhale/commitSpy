@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useStateValue } from '../store/StateProvider';
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 
@@ -104,7 +104,9 @@ const CreateUser = () => {
             });
     }
     if (state.isLoggedIn) {
-        return <Redirect to="/home" />;
+        // return <Redirect to="/home" />;
+        window.location.href = `https://github.com/apps/committ-app`;
+
     }
 
     if (getUserpass) {
