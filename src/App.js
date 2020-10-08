@@ -8,7 +8,6 @@ import Wellcome from './Components/Wellcome'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import ForgetPass from './Components/ForgetPass';
 import VerifyPass from './Components/VerifyPass';
-import Usertest from './Components/Usertest';
 
 
 function App() {
@@ -32,7 +31,6 @@ function App() {
 
           <Route path='/forgetpass' component={ForgetPass} />
           <Route path='/verifypass' component={VerifyPass} />
-          <Route path='/user' component={Usertest} />
 
           <Route path="/home" component={Home} />
 

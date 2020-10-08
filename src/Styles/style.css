@@ -18,6 +18,28 @@ a {
   color: inherit;
 }
 
+.welcome {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 100vh;
+  place-items: center;
+}
+
+.welcome a {
+  width: 135px;
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+  border-radius: 8px;
+}
+
 .createuser {
   display: -ms-grid;
   display: grid;
