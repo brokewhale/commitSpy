@@ -1,5 +1,4 @@
 .user {
-    overflow: scroll;
     color: #354376;
     display: grid;
     place-items: center;
@@ -96,6 +95,7 @@
     color: #354376;
     width: 85px;
     height: 70px;
+    margin-top: -15px;
 
     p {
         margin-bottom: 7px;
