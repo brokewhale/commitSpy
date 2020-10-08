@@ -12,6 +12,7 @@ import Popup from 'reactjs-popup';
 import { Twitter } from '@material-ui/icons';
 import Loader from 'react-loader-spinner'
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Chart from './Chart'
 
 
 
@@ -193,6 +194,8 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
                     </div>
 
                 </Popup>
+
+                <Chart weeklyCommits={proj.weeklyCommits} />
             </div>
         );
     } else {
