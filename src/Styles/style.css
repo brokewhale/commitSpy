@@ -882,12 +882,17 @@ a {
 }
 
 .user {
-  overflow: scroll;
   color: #354376;
-  display: -ms-grid;
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   place-items: center;
   height: 97vh;
+  position: relative;
 }
 
 .user .MuiAvatar-root {
@@ -980,6 +985,7 @@ a {
   color: #354376;
   width: 85px;
   height: 70px;
+  margin-top: -15px;
 }
 
 .card p {
@@ -1015,5 +1021,10 @@ a {
   height: 15px !important;
   margin-left: 9px;
   color: black;
+}
+
+.logout {
+  position: absolute;
+  right: 0;
 }
 /*# sourceMappingURL=style.css.map */

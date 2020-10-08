@@ -8,6 +8,9 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { CancelOutlined } from '@material-ui/icons';
 import ChartTotal from './ChartTotal'
+import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
+import { useStateValue } from '../store/StateProvider';
+
 
 
 
@@ -15,6 +18,9 @@ import ChartTotal from './ChartTotal'
 
 
 const User = ({ token, name, img, email, projects, wallet, proj }) => {
+    // eslint-disable-next-line
+    const [{ isLoggedIn }, dispatch] = useStateValue();
+
     const [open, setOpen] = useState(false);
     const [amount, setAmount] = useState('')
     const [btnload, setBtnload] = useState(false)
@@ -55,9 +61,21 @@ const User = ({ token, name, img, email, projects, wallet, proj }) => {
     //     return <Redirect to="www.google.com" />;
 
     // }
+
+    const logout = () => {
+
+        dispatch({
+            type: "LOGOUT"
+        });
+
+        window.location.href = `http://localhost:3000/home`;
+
+
+    }
     return (
 
         <div className="user">
+            <ExitToAppOutlinedIcon className='logout' onClick={logout} />
             <Avatar className='logo' alt="name" src={img} />
             <h1>{name}</h1>
             <p>{email}</p>
