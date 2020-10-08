@@ -68,7 +68,7 @@ const User = ({ token, name, img, email, projects, wallet, proj }) => {
             type: "LOGOUT"
         });
 
-        window.location.href = `http://localhost:3000/home`;
+        window.location.href = `http://commitspy.netlify.app/home`;
 
 
     }
