@@ -70,7 +70,9 @@ const Home = () => {
                 setProjects(data2.data.project)
                 console.log(data2.data.project);
                 setLoading(true)
-            }));
+            })).catch(err => {
+                console.log(err);
+            });
         } else {
             setNontoken(true)
 
@@ -140,7 +142,7 @@ const Home = () => {
                                         </Route>
                                         <Route path='/home/user' >
                                             <div className="showmain">
-                                                <User token={token} name={me.user.username} img={me.user.avatar} email={me.user.email} projects={projects.length} wallet={me.user.wallet} proj={projects} />
+                                                <User token={token} name={me.user.username} img={me?.user.avatar} email={me.user.email} projects={projects.length} wallet={me.user.wallet} proj={projects} />
 
                                             </div>
                                         </Route>
@@ -191,7 +193,7 @@ const Home = () => {
                                             </Route>
                                             <Route path='/home/user' >
                                                 <div className="showmain">
-                                                    <User token={token} name={me.user.username} img={me.user.avatar} email={me.user.email} projects={projects.length} wallet={me.user.wallet} proj={projects} />
+                                                    <User token={token} name={me.user.username} img={me?.user.avatar} email={me.user.email} projects={projects.length} wallet={me.user.wallet} proj={projects} />
 
                                                 </div>
                                             </Route>

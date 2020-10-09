@@ -75,6 +75,8 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
         }
     }
 
+
+
     if (done2) {
         return <Redirect to='/home' />
     }
@@ -110,6 +112,36 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
         }).catch(function (error) {
             console.log(error);
         });
+    }
+    if (done) {
+        function extractCommits(dump, prev) {
+            let total = 0;
+            let list = dump.filter(commit => {
+                return commit.date >= prev && commit.date < Date.now();
+
+            });
+            for (let i = 0; i < list.length; i++) {
+                total += list[i].numberOfCommit
+            }
+            return total;
+        }
+
+        function getCurrentCommits(project) {
+            let trigger = new Date(project.trigger);
+            let total = 0;
+            let endTrigger = project.trigger;
+            if (trigger.getTime() - project.maxTime > Date.now()) {
+                //means that he has finished and completed his goals
+                total = extractCommits(project.rawCommits, (trigger.getTime() - (2 * project.maxTime)));
+                endTrigger = trigger.getTime() - project.maxTime;
+            } else {
+                total = extractCommits(project.rawCommits, (trigger.getTime() - (project.maxTime)));
+            }
+            return { total, trigger: endTrigger };
+        }
+
+        let overcommit = getCurrentCommits(proj)
+        console.log(overcommit);
     }
 
 
