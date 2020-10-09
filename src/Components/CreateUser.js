@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useStateValue } from '../store/StateProvider';
-// import { Redirect } from "react-router-dom";
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 
@@ -29,9 +28,7 @@ const CreateUser = () => {
         const url = window.location.href;
         const hasCode = url.includes("?code=");
         const axios = require('axios');
-        // const Sendpass =()=>{
 
-        // }
 
 
         // If Github API returns the code parameter
@@ -104,7 +101,6 @@ const CreateUser = () => {
             });
     }
     if (state.isLoggedIn) {
-        // return <Redirect to="/home" />;
         window.location.href = `https://github.com/apps/committ-app`;
 
     }

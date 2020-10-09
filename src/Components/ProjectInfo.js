@@ -1,13 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import NotificationsActiveOutlinedIcon from '@material-ui/icons/NotificationsActiveOutlined';
 import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import EditIcon from '@material-ui/icons/Edit';
 import { IconButton } from '@material-ui/core';
-import { useState } from 'react';
 import { Redirect } from "react-router-dom";
-import { useEffect } from 'react';
 import Popup from 'reactjs-popup';
 import { Twitter } from '@material-ui/icons';
 import Loader from 'react-loader-spinner'
@@ -58,7 +56,6 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
         [test, roomId,])
     let date = new Date(proj.trigger);
     let deadline = date.toDateString()
-    // let maxtest = Math.floor((proj / 1000) / (86400))
 
     const deleteProject = () => {
         if (window.confirm('are you sure you want to delete')) {

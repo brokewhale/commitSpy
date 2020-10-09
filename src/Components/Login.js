@@ -23,7 +23,6 @@ const Login = () => {
         e.preventDefault();
         setBtnload(true)
         setData({ ...data, errorMessage: "" })
-        // console.log('clicked');
 
         axios({
             method: 'post',

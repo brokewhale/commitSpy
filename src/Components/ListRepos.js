@@ -3,7 +3,6 @@ import { useState } from 'react';
 
 
 
-// import Popup from 'reactjs-popup';
 import { Redirect } from "react-router-dom";
 
 
@@ -39,8 +38,7 @@ const ListRepos = ({ reponame, id, fullname, token, onTee }) => {
 
 
     if (done) {
-        // appHistory.push('/home');
-        // appHistory.goBack();
+
 
         return <Redirect to="/home" />;
     }

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useStateValue } from '../store/StateProvider';
 import { useEffect } from 'react';
-// import { SearchOutlined } from '@material-ui/icons';
 import ProjectCard from './ProjectCard';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Media from 'react-media';
@@ -74,8 +73,7 @@ const Home = () => {
             }));
         } else {
             setNontoken(true)
-            // return <Redirect to='/signin' />
-            // console.log('not token');
+
         }
 
 

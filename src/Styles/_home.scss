@@ -1,17 +1,13 @@
 .home {
-    // background-color: white;
-    // height: 100vh;
     color: white;
     box-sizing: border-box;
     position: relative;
 
     &_grid {
         display: flex;
-        // grid-template-columns: 1fr 1fr;
         justify-content: center;
         height: 97vh;
         flex-wrap: wrap;
-        // place-items: center;
 
         @include breakpoint-down(medium) {
             display: grid;
@@ -26,10 +22,7 @@
             flex-direction: column;
             padding: 0 60px 0 60px;
 
-            // padding-top: 130px;
-            // padding-right: 169px;
-            // padding-left: 150px;
-            // padding-bottom: 150px;
+
             @include breakpoint-down(small) {
                 padding: 0 0 10px 0;
             }
@@ -67,8 +60,7 @@
 
         @media screen and (max-width: 1165px) and (min-width: 1025px) {
             .info {
-                padding-right: 50px;
-                padding-left: 50px;
+                padding: 0 50px;
             }
         }
 
@@ -152,11 +144,7 @@
     }
 }
 
-// .proj_grid::-webkit-scrollbar-track {
-//     border-radius: 10px;
-//     background-color: #262A41;
 
-// }
 
 .proj_grid::-webkit-scrollbar {
     width: 5px;

@@ -376,8 +376,7 @@ a {
 
 @media screen and (max-width: 1165px) and (min-width: 1025px) {
   .home_grid .info {
-    padding-right: 50px;
-    padding-left: 50px;
+    padding: 0 50px;
   }
 }
 
@@ -630,10 +629,7 @@ a {
 
 .projectinfo {
   color: black;
-  padding-top: 20px;
-  padding-right: 50px;
-  padding-bottom: 20px;
-  padding-left: 50px;
+  padding: 20px 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -645,8 +641,7 @@ a {
 
 @media (max-width: 40em) {
   .projectinfo {
-    padding: 10px;
-    padding-top: 30px;
+    padding: 30px 10px 10px 10px;
   }
 }
 
@@ -697,8 +692,7 @@ a {
   border-radius: 9px;
   min-width: 28px;
   text-align: center;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 5px 0;
   margin-right: 15px;
 }
 

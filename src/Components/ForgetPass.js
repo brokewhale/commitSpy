@@ -2,15 +2,12 @@ import React from 'react';
 import { useState } from 'react';
 import Popup from 'reactjs-popup';
 
-// import { Redirect } from "react-router-dom";
 
 const ForgetPass = () => {
     const axios = require('axios');
     const [open, setOpen] = useState(false);
-    // const closeModal = () => setOpen(false);
 
     const [email, setEmail] = useState('')
-    // const [done, setDone] = useState(false)
     const sendmail = (e) => {
         console.log(email);
         e.preventDefault()
@@ -27,7 +24,6 @@ const ForgetPass = () => {
                 console.log(response);
                 setOpen(o => !o)
 
-                // setDone(true)
 
             })
             .catch(function (error) {
@@ -36,12 +32,7 @@ const ForgetPass = () => {
             });
     }
 
-    // if (done) {
-    //     return (
 
-    //         <Redirect to='/verifypass' />
-    //     )
-    // }
     return (
         <div className='forgetpass'>
             <form className="container">

@@ -18,12 +18,6 @@ const Chooseproj = ({ onTee }) => {
         }).then((resp) => {
             console.log(resp.data);
             SetNonredux(resp.data)
-            // dispatch({
-            //     type: "GETREPO",
-            //     payload: { repos: resp.data, }
-            // });
-            // setRepos(resp.data)
-            // console.log(repos[4].name);
             setIsloading(true)
 
 
@@ -59,7 +53,6 @@ const Chooseproj = ({ onTee }) => {
 
         return (
             <div className='chooseproj loading'>
-                {/* <h3>loading</h3> */}
                 <Loader type="Rings" color="#354376" height={130} width={130} />
             </div>
         );

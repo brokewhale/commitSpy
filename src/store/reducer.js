@@ -16,31 +16,18 @@ const reducer = (state, action) => {
     switch (action.type) {
         case "LOGIN": {
             localStorage.setItem("isLoggedIn", JSON.stringify(action.payload.isLoggedIn))
-            // localStorage.setItem("user", JSON.stringify(action.payload.user))
             localStorage.setItem("token", JSON.stringify(action.payload.token))
-            // localStorage.setItem("repos", JSON.stringify(action.payload.repos))
 
 
             console.log(action.payload.isLoggedIn)
             return {
                 ...state,
                 isLoggedIn: action.payload.isLoggedIn,
-                // user: action.payload.user,
                 token: action.payload.token,
 
             };
         }
-        case "GETREPO": {
-            localStorage.setItem("repos", JSON.stringify(action.payload.repos))
 
-
-            return {
-                ...state,
-                repos: action.payload.repos,
-
-
-            };
-        }
         case "LOGOUT": {
             localStorage.clear()
             return {

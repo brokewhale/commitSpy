@@ -55,12 +55,7 @@ const User = ({ token, name, img, email, projects, wallet, proj }) => {
             console.log(err);
         })
     }
-    // if (done) {
 
-
-    //     return <Redirect to="www.google.com" />;
-
-    // }
 
     const logout = () => {
 
@@ -83,12 +78,12 @@ const User = ({ token, name, img, email, projects, wallet, proj }) => {
             <div className="userparams">
                 <div className="noofproj card">
                     <p>{projects}</p>
-                    <h3>projects</h3>
+                    <h3>Projects</h3>
                 </div>
                 <div className="divide"></div>
                 <div className="amounti card">
                     <p><span>&#8358;</span>  {wallet}</p>
-                    <h3>wallet</h3>
+                    <h3>Wallet</h3>
                 </div>
             </div>
             <div className="addmoney" onClick={() => setOpen(o => !o)}>
@@ -98,13 +93,7 @@ const User = ({ token, name, img, email, projects, wallet, proj }) => {
             <ChartTotal projects={proj} />
 
             <Popup open={open} closeOnDocumentClick onClose={closeModal}  >
-                {/* <div className='pay_pop'>
-                    <input type="text" placeholder="Enter amount you want to add" value={amount} onChange={e => setAmount(e.target.value)} />
-                    <button onClick={sendpayment}>Submit {btnload && <CircularProgress />}</button>
-                    <button onClick={closeModal}>Cancle</button>
 
-
-                </div> */}
                 <form className='pay_pop' noValidate autoComplete="off">
                     <TextField id="outlined-basic" size='small' value={amount} onChange={e => setAmount(e.target.value)} label="Enter Amount (₦)" variant="outlined" />
                     <Button
