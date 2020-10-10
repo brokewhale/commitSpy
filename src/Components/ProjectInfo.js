@@ -13,7 +13,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import Chart from './Chart'
 
 
-
+let output = {}
 
 const ProjectInfo = ({ projects, onKen, token, location }) => {
 
@@ -117,9 +117,13 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
         function extractCommits(dump, prev) {
             let total = 0;
             let list = dump.filter(commit => {
-                return commit.date >= prev && commit.date < Date.now();
+
+                commit.date = new Date(commit.date)
+                let output = commit.date >= prev && commit.date < Date.now();
+                return output
 
             });
+            console.log("list > ", list)
             for (let i = 0; i < list.length; i++) {
                 total += list[i].numberOfCommit
             }
@@ -132,16 +136,18 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
             let endTrigger = project.trigger;
             if (trigger.getTime() - project.maxTime > Date.now()) {
                 //means that he has finished and completed his goals
-                total = extractCommits(project.rawCommits, (trigger.getTime() - (2 * project.maxTime)));
+                let prev = new Date(trigger.getTime() - (2 * project.maxTime));
+                total = extractCommits(project.rawCommits, prev);
                 endTrigger = trigger.getTime() - project.maxTime;
             } else {
-                total = extractCommits(project.rawCommits, (trigger.getTime() - (project.maxTime)));
+                let prev = new Date(trigger.getTime() - (project.maxTime));
+                total = extractCommits(project.rawCommits, prev);
             }
             return { total, trigger: endTrigger };
         }
 
-        let overcommit = getCurrentCommits(proj)
-        console.log(overcommit);
+
+        output = getCurrentCommits(proj)
     }
 
 
@@ -167,11 +173,14 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
                             <EditIcon />
                         </IconButton>
                     </div>
+                    <div className="overnotification">
+                        <div className="notification">
+                            <NotificationsActiveOutlinedIcon />
+                            <h3>Deadline:</h3>
+                            <h3 className='date'>{deadline}</h3>
+                        </div>
+                        <h3>{output.total}/ {proj.setMinCommit}</h3>
 
-                    <div className="notification">
-                        <NotificationsActiveOutlinedIcon />
-                        <h3>Deadline:</h3>
-                        <h3 className='date'>{deadline}</h3>
                     </div>
                     <div className="settings_info">
                         <h3>Min commit per week</h3>
