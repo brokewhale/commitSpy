@@ -22,8 +22,8 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
     const closeModal = () => setOpen(false);
     const [done, setDone] = useState(false)
     const [done2, setDone2] = useState(false)
-    const [maxtime, setMaxtime] = useState(7)
-    const [mincommit, setMincommit] = useState(15)
+    const [maxtime, setMaxtime] = useState('')
+    const [mincommit, setMincommit] = useState('')
     const [alarm, setAlarm] = useState(0)
     const [billing, setBilling] = useState(false);
     const [test, setTest] = useState(false)
@@ -54,8 +54,7 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
     },
         // eslint-disable-next-line  
         [test, roomId,])
-    let date = new Date(proj.trigger);
-    let deadline = date.toDateString()
+
 
     const deleteProject = () => {
         if (window.confirm('are you sure you want to delete')) {
@@ -148,7 +147,10 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
 
 
         output = getCurrentCommits(proj)
+
     }
+    let date = new Date(output.trigger);
+    let deadline = date.toDateString()
 
 
     if (done) {
@@ -179,13 +181,19 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
                             <h3>Deadline:</h3>
                             <h3 className='date'>{deadline}</h3>
                         </div>
-                        <h3>{output.total}/ {proj.setMinCommit}</h3>
+
+                        {/* <div class="frac">
+                            <span>{output.total}</span>
+                            <span class="symbol">/</span>
+                            <span class="bottom">{proj.setMinCommit}</span>
+
+                        </div> */}
+
 
                     </div>
-                    <div className="settings_info">
-                        <h3>Min commit per week</h3>
+                    <div className="over">
+                        <h3>{output.total} Out of {proj.setMinCommit} commits </h3>
 
-                        <p>{proj.setMinCommit}</p>
 
                     </div>
 

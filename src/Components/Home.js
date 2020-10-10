@@ -19,7 +19,6 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 
 const Home = () => {
-    console.log('againnnnnnn');
     // eslint-disable-next-line
     const [{ token }, dispatch] = useStateValue();
     const [me, setMe] = useState({});

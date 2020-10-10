@@ -68,7 +68,6 @@
     background-color: #F3F5FA;
     width: fit-content;
     border-radius: 8px;
-    margin-bottom: 15px;
     padding: 10px 15px;
 
     svg {
@@ -173,4 +172,13 @@
 .chart-container {
     margin: 0 auto;
     max-width: 960px;
+}
+
+.over {
+    margin-top: 15px;
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+
 }

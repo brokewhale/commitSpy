@@ -70,7 +70,11 @@ const User = ({ token, name, img, email, projects, wallet, proj }) => {
     return (
 
         <div className="user">
-            <ExitToAppOutlinedIcon className='logout' onClick={logout} />
+            <div className="logout">
+                <ExitToAppOutlinedIcon onClick={logout} />
+                <p>Logout</p>
+
+            </div>
             <Avatar className='logo' alt="name" src={img} />
             <h1>{name}</h1>
             <p>{email}</p>

@@ -712,7 +712,6 @@ a {
   width: -moz-fit-content;
   width: fit-content;
   border-radius: 8px;
-  margin-bottom: 15px;
   padding: 10px 15px;
 }
 
@@ -831,6 +830,17 @@ a {
 .chart-container {
   margin: 0 auto;
   max-width: 960px;
+}
+
+.over {
+  margin-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
 }
 
 .forgetpass {
@@ -1043,5 +1053,11 @@ a {
   position: absolute;
   right: 17px;
   top: 13px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.logout p {
+  font-size: 10px;
 }
 /*# sourceMappingURL=style.css.map */
