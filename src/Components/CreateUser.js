@@ -142,10 +142,10 @@ const CreateUser = () => {
                 });
             });
     }
-    if (state.isLoggedIn) {
-        window.location.href = `https://github.com/apps/committ-app`;
+    // if (state.isLoggedIn) {
+    //     window.location.href = `https://github.com/apps/committ-app`;
 
-    }
+    // }
 
     if (getUserpass) {
 
