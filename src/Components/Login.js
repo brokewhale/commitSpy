@@ -79,7 +79,7 @@ const Login = () => {
                         <div className="form__btn">
 
                             <button className='login_btn' onClick={Sendlogin}>Login {btnload && <CircularProgress />}</button>
-                            <Link to='/login' className='signup_btn' >Sign up</Link>
+                            <Link to='/register' className='signup_btn' >Sign up</Link>
                         </div>
                     </form>
                     < Link to='/forgetpass' className="forget">
