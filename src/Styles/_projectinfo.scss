@@ -182,3 +182,25 @@
     margin-bottom: 15px;
 
 }
+
+.dialog-edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .minmax {
+        margin-bottom: 15px;
+    }
+
+    .alarm-billing {
+        margin-bottom: 15px;
+
+    }
+}
+
+.dialog-load {
+    width: 15px !important;
+    height: 15px !important;
+    margin-left: 9px;
+
+}

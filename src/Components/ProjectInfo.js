@@ -6,26 +6,50 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import EditIcon from '@material-ui/icons/Edit';
 import { IconButton } from '@material-ui/core';
 import { Redirect } from "react-router-dom";
-import Popup from 'reactjs-popup';
+// import Popup from 'reactjs-popup';
 import { Twitter } from '@material-ui/icons';
 import Loader from 'react-loader-spinner'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Chart from './Chart'
+// Dialog
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import TextField from '@material-ui/core/TextField';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
+import FormControl from '@material-ui/core/FormControl';
 
 
 let output = {}
 
 const ProjectInfo = ({ projects, onKen, token, location }) => {
-
-    // STATES
-    const [open, setOpen] = useState(false);
-    const closeModal = () => setOpen(false);
-    const [done, setDone] = useState(false)
-    const [done2, setDone2] = useState(false)
+    // Dialog STate
+    const [open, setOpen] = React.useState(false);
     const [maxtime, setMaxtime] = useState('')
     const [mincommit, setMincommit] = useState('')
+
+
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    // STATES
+    // const [open, setOpen] = useState(false);
+    // const closeModal = () => setOpen(false);
+    const [done, setDone] = useState(false)
+    const [done2, setDone2] = useState(false)
+
     const [alarm, setAlarm] = useState(0)
-    const [billing, setBilling] = useState(false);
+    const [billing, setBilling] = useState(0);
     const [test, setTest] = useState(false)
     const [tweet, setTweet] = useState(0)
     const [btnload, setBtnload] = useState(false)
@@ -41,6 +65,8 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
         }).then(function (response) {
             // console.log(response);
             setProj(response.data)
+            setTweet(response.data.alarmType)
+            setMincommit(response.data.setMinCommit)
             setDone(true)
 
 
@@ -54,6 +80,7 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
     },
         // eslint-disable-next-line  
         [test, roomId,])
+
 
 
     const deleteProject = () => {
@@ -104,7 +131,7 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
 
             setTest(o => !o)
             setBtnload(false)
-            closeModal()
+            handleClose()
 
 
 
@@ -122,7 +149,6 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
                 return output
 
             });
-            console.log("list > ", list)
             for (let i = 0; i < list.length; i++) {
                 total += list[i].numberOfCommit
             }
@@ -170,7 +196,7 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
                     <div className="settings__top">
 
                         <h1>Settings</h1>
-                        <IconButton onClick={() => setOpen(o => !o)}>
+                        <IconButton onClick={handleClickOpen}>
 
                             <EditIcon />
                         </IconButton>
@@ -206,7 +232,7 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
 
                     </div>
                 </div>
-                <Popup open={open} closeOnDocumentClick onClose={closeModal}  >
+                {/* <Popup open={open} closeOnDocumentClick   >
                     <div className='edit_pop'>
                         <div className='maxmin'>
                             <h3>Maxtime</h3>
@@ -239,7 +265,57 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
 
                     </div>
 
-                </Popup>
+                </Popup> */}
+                <Dialog disableBackdropClick disableEscapeKeyDown open={open} onClose={handleClose}>
+                    <DialogTitle>Fill the form</DialogTitle>
+                    <DialogContent>
+                        <form className='dialog-edit'>
+                            <TextField size='small' className='minmax' id="outlined-basic" label="Maxtime" variant="outlined" value={maxtime} onChange={e => setMaxtime(e.target.value)} />
+                            <TextField size='small' className='minmax' id="outlined-basic" label="Set Min Commit" variant="outlined" value={mincommit} onChange={e => setMincommit(e.target.value)} />
+                            <FormControl size='small' variant="outlined" className="alarm-billing">
+                                <InputLabel id="demo-dialog-select-label">Alarm Type</InputLabel>
+                                <Select
+                                    labelId="demo-dialog-select-label"
+                                    id="demo-dialog-select"
+                                    value={alarm}
+                                    onChange={(e) => setAlarm(e.target.value)}
+                                    label="Alarm Type"
+
+                                >
+
+                                    <MenuItem value={0}>Email only</MenuItem>
+                                    <MenuItem value={1}>Email and Twitter</MenuItem>
+                                </Select>
+                            </FormControl>
+
+                            <FormControl size='small' variant="outlined" className="alarm-billing">
+                                <InputLabel id="demo-dialog-select-label">Billing</InputLabel>
+                                <Select
+                                    labelId="demo-dialog-select-label"
+                                    id="demo-dialog-select"
+                                    value={billing}
+                                    onChange={(e) => setBilling(e.target.value)}
+                                    label="Billing"
+
+                                >
+
+                                    <MenuItem value={0}>No</MenuItem>
+                                    <MenuItem value={1}>Yes</MenuItem>
+                                </Select>
+                            </FormControl>
+
+
+                        </form>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={handleClose} color="primary">
+                            Cancel
+                        </Button>
+                        <Button onClick={getEdit} color="primary">
+                            Ok{btnload && <CircularProgress className='dialog-load' />}
+                        </Button>
+                    </DialogActions>
+                </Dialog>
 
                 <Chart weeklyCommits={proj.weeklyCommits} />
             </div>

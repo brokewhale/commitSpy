@@ -528,6 +528,7 @@ a {
   cursor: pointer;
   -webkit-box-shadow: -1px 0px 13px -1px #354376;
           box-shadow: -1px 0px 13px -1px #354376;
+  z-index: 9999;
 }
 
 .createbtn svg {
@@ -841,6 +842,33 @@ a {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 15px;
+}
+
+.dialog-edit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.dialog-edit .minmax {
+  margin-bottom: 15px;
+}
+
+.dialog-edit .alarm-billing {
+  margin-bottom: 15px;
+}
+
+.dialog-load {
+  width: 15px !important;
+  height: 15px !important;
+  margin-left: 9px;
 }
 
 .forgetpass {
