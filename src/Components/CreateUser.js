@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useStateValue } from '../store/StateProvider';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import { Redirect } from "react-router-dom";
+
 
 
 
@@ -11,6 +13,7 @@ const CreateUser = () => {
     const [scope, setScope] = useState('')
     const [token_type, setTokentype] = useState('')
     const [btnload, setBtnload] = useState(false)
+    const [checkstate, setCheckstate] = useState('')
 
 
 
@@ -75,6 +78,7 @@ const CreateUser = () => {
                     )
                         .then(function (response) {
                             console.log(response);
+                            setCheckstate(response.data.state)
                             dispatch({
                                 type: "LOGIN",
                                 payload: { token: response.data.user.token, isLoggedIn: true }
@@ -142,10 +146,15 @@ const CreateUser = () => {
                 });
             });
     }
-    // if (state.isLoggedIn) {
-    //     window.location.href = `https://github.com/apps/committ-app`;
+    if (state.isLoggedIn) {
+        if (checkstate === 'reg') {
 
-    // }
+            window.location.href = `https://github.com/apps/committ-app`;
+        } else if (checkstate === 'login') {
+            return <Redirect to="/home" />;
+        }
+
+    }
 
     if (getUserpass) {
 
