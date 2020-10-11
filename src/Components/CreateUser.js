@@ -66,7 +66,9 @@ const CreateUser = () => {
         }
 
         // const axios = require('axios');
-    }, [state, dispatch, data,]);
+    },
+        // eslint-disable-next-line 
+        [state, dispatch, data,]);
 
     const Sendpass = (e) => {
         const axios = require('axios');
