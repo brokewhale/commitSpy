@@ -71,6 +71,7 @@ const CreateUser = () => {
         [state, dispatch, data,]);
 
     const Sendpass = (e) => {
+        console.log('sendpass');
         const axios = require('axios');
         setBtnload(true)
         e.preventDefault();
