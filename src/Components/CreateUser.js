@@ -36,6 +36,8 @@ const CreateUser = () => {
 
         // If Github API returns the code parameter
         if (hasCode) {
+            setBtnload(true)
+
             const newUrl = url.split("?code=");
             window.history.pushState({}, null, newUrl[0]);
             setData({ ...data, isLoading: true });
