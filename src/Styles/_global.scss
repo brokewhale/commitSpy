@@ -19,7 +19,7 @@ a {
 .welcome {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    // justify-content: space-around;
     height: 100vh;
     place-items: center;
 
@@ -30,5 +30,6 @@ a {
         text-align: center;
         background-color: white;
         border-radius: 8px;
+        margin-bottom: 20px;
     }
 }
