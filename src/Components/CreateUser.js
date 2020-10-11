@@ -55,7 +55,46 @@ const CreateUser = () => {
                     setTokentype(params.get("token_type"))
 
                     // setGetUserpass(true)
-                    Sendpass()
+                    // Sendpass()
+
+
+
+
+                    setBtnload(true)
+                    axios.post('https://commitspy.herokuapp.com/api/users/regtoken',
+
+                        {
+
+                            // email: useremail,
+                            access_token: params.get("access_token"),
+                            // password: userpass,
+                            scope: params.get("scope"),
+                            token_type: params.get("token_type"),
+
+                        }
+                    )
+                        .then(function (response) {
+                            console.log(response);
+                            dispatch({
+                                type: "LOGIN",
+                                payload: { token: response.data.user.token, isLoggedIn: true }
+                            });
+                            setBtnload(false)
+
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                            setData({
+                                isLoading: false,
+                                errorMessage: "Sorry! Login failed"
+                            });
+                        });
+
+
+
+
+
+
 
                 })
 
