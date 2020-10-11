@@ -138,7 +138,7 @@ const CreateUser = () => {
                 console.log(error);
                 setData({
                     isLoading: false,
-                    errorMessage: "Sorry! Login failed"
+                    errorMessage: "Sorry! User already has an account"
                 });
             });
     }

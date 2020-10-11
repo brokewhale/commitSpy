@@ -19,7 +19,7 @@ function App() {
           <Route exact path="/" component={Wellcome} />
 
 
-          <Route path='/login'>
+          <Route path='/register'>
             <CreateUser />
 
           </Route>
