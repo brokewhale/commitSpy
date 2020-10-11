@@ -70,11 +70,10 @@ const CreateUser = () => {
         // eslint-disable-next-line 
         [state, dispatch, data,]);
 
-    const Sendpass = (e) => {
+    const Sendpass = () => {
         console.log('sendpass');
         const axios = require('axios');
         setBtnload(true)
-        e.preventDefault();
         axios.post('https://commitspy.herokuapp.com/api/users/regtoken',
 
             {
