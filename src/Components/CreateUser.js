@@ -54,7 +54,8 @@ const CreateUser = () => {
                     setScope(params.get("scope"));
                     setTokentype(params.get("token_type"))
 
-                    setGetUserpass(true)
+                    // setGetUserpass(true)
+                    Sendpass()
 
                 })
 
@@ -75,9 +76,9 @@ const CreateUser = () => {
 
             {
 
-                email: useremail,
+                // email: useremail,
                 access_token: access_token,
-                password: userpass,
+                // password: userpass,
                 scope: scope,
                 token_type: token_type,
 

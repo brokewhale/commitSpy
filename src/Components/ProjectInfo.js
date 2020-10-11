@@ -43,8 +43,7 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
     };
 
     // STATES
-    // const [open, setOpen] = useState(false);
-    // const closeModal = () => setOpen(false);
+
     const [done, setDone] = useState(false)
     const [done2, setDone2] = useState(false)
 
@@ -208,12 +207,7 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
                             <h3 className='date'>{deadline}</h3>
                         </div>
 
-                        {/* <div class="frac">
-                            <span>{output.total}</span>
-                            <span class="symbol">/</span>
-                            <span class="bottom">{proj.setMinCommit}</span>
 
-                        </div> */}
 
 
                     </div>
@@ -232,40 +226,7 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
 
                     </div>
                 </div>
-                {/* <Popup open={open} closeOnDocumentClick   >
-                    <div className='edit_pop'>
-                        <div className='maxmin'>
-                            <h3>Maxtime</h3>
-                            <input type="text" placeholder="Enter Deadline" value={maxtime} onChange={e => setMaxtime(e.target.value)} />
-                        </div>
-                        <div className='maxmin'>
-                            <h3>Set Min commit</h3>
-                            <input type="text" placeholder="Enter your min commit" value={mincommit} onChange={e => setMincommit(e.target.value)} />
-                        </div>
-                        <div className='alabill'>
-                            <h3>Alarm Type</h3>
-                            <select name="alarm" id="alarm" value={alarm} onChange={(e) => setAlarm(e.target.value)}>
-                                <option value="0">Email only</option>
-                                <option value="1">Email and Twitter</option>
-                            </select>
 
-
-                        </div>
-                        <div className='alabill'>
-                            <h3>Billing</h3>
-                            <select name="billing" id="billing" value={billing} onChange={(e) => setBilling(e.target.value)}>
-                                <option value='0' >No</option>
-                                <option value='1'>Yes</option>
-                            </select>
-                        </div>
-
-                        <button onClick={getEdit}>Submit {btnload && <CircularProgress />}</button>
-                        <button onClick={closeModal}>Cancle</button>
-
-
-                    </div>
-
-                </Popup> */}
                 <Dialog disableBackdropClick disableEscapeKeyDown open={open} onClose={handleClose}>
                     <DialogTitle>Fill the form</DialogTitle>
                     <DialogContent>
