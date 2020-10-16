@@ -2,7 +2,7 @@ body {
     padding: 10px;
     background-color: #262a41;
     font-size: 14px;
-    height: 100%;
+    height: 100vh;
     box-sizing: border-box;
 
     @include breakpoint-down(small) {
@@ -14,22 +14,4 @@ body {
 a {
     text-decoration: none;
     color: inherit;
-}
-
-.welcome {
-    display: flex;
-    flex-direction: column;
-    // justify-content: space-around;
-    height: 100vh;
-    place-items: center;
-
-
-    a {
-        width: 135px;
-        padding: 10px;
-        text-align: center;
-        background-color: white;
-        border-radius: 8px;
-        margin-bottom: 20px;
-    }
 }

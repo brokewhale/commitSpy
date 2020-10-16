@@ -24,7 +24,7 @@
             }
 
             .intro {
-                color: #a0aec0;
+                color: rgb(10, 9, 9);
                 margin-top: .5rem;
                 font-size: .875rem;
             }
@@ -32,7 +32,8 @@
             .login__form {
                 margin-top: 2rem;
                 font-size: .875rem;
-                color: #2d3748;
+                color: rgb(10, 9, 9);
+
 
                 input {
                     padding: .75rem 1rem;
@@ -42,7 +43,8 @@
                     border: 1px solid #e2e8f0;
 
                     &::placeholder {
-                        color: #a0aec0;
+                        color: rgb(10, 9, 9);
+
                     }
 
 
@@ -88,8 +90,8 @@
                     }
 
                     .signup_btn {
-                        color: #4a5568;
-                        border: 1px solid #e2e8f0;
+                        color: #0a0909;
+                        border: 1px solid #a6a6a6;
                         padding: .75rem 1rem;
                         width: 100%;
                         vertical-align: top;
@@ -130,4 +132,13 @@
     text-align: center;
     justify-content: center;
     margin-top: 15px;
+    appearance: none;
+    border-radius: 8px;
+    border: 1px solid #a6a6a6;
+    padding: 5px;
+    cursor: pointer;
+
+    svg {
+        margin-left: 10px;
+    }
 }

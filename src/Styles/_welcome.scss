@@ -1,0 +1,373 @@
+// .welcome {
+//     // height: 98vh;
+//     // width: 100vw;
+//     // margin: -10px;
+//     color: white;
+
+//     &_grid {
+//         display: grid;
+//         grid-template-columns: 1fr 1fr;
+//         height: 98vh;
+//         background-color: #262a41;
+
+
+
+
+//         .left {
+//             // background-color: lightblue;
+//             margin: -10px 0px -4px -10px;
+
+//             // background-color: white;
+//             @include breakpoint-down(medium) {
+//                 margin: 0;
+//             }
+
+//             .logo {
+//                 width: 100%;
+//                 padding: 10px;
+//                 height: 8vh;
+//                 display: flex;
+//                 align-items: center;
+//                 font-size: 23px;
+//                 padding-left: 38px;
+//                 font-family: initial;
+
+//                 @include breakpoint-down(medium) {
+//                     padding: 0;
+//                     height: 4vh;
+//                     font-size: 19px;
+
+//                 }
+//             }
+
+//             .hero {
+//                 height: 67vh;
+//                 display: flex;
+//                 flex-direction: column;
+//                 justify-content: center;
+
+//                 @include breakpoint-down(medium) {
+//                     width: 91vw;
+//                     // justify-content: space-evenly;
+//                 }
+
+//                 h3 {
+//                     font-size: 41px;
+//                     padding: 41px;
+//                     padding-bottom: 26px;
+
+//                     @include breakpoint-down(medium) {
+//                         padding: 0;
+//                         font-size: 25px;
+//                         // margin-top: -66px;
+//                     }
+//                 }
+
+//                 p {
+//                     padding: 0 38px;
+
+//                     @include breakpoint-down(medium) {
+//                         padding: 0;
+//                         margin-top: 38px;
+
+//                     }
+//                 }
+//             }
+
+//             .getstarted {
+//                 padding: 0 38px;
+
+//                 @include breakpoint-down(medium) {
+//                     padding: 0;
+//                 }
+
+//                 &_btn {
+//                     display: flex;
+//                     margin-top: 10px;
+
+//                     a {
+//                         padding: 10px;
+//                         border-radius: 8px;
+//                         background-color: white;
+//                         margin-right: 20px;
+//                         color: black;
+//                         width: 100px;
+//                         text-align: center;
+//                     }
+//                 }
+//             }
+
+//         }
+
+//         .right {
+//             margin: -10px -10px -4px 0;
+//             background: url(../assets/projcoor.webp) no-repeat;
+//             background-size: cover;
+
+//             @include breakpoint-down(medium) {
+//                 display: none;
+//             }
+
+//         }
+//     }
+// }
+
+.welcome {
+    height: auto;
+
+    .carousel-root {
+        margin: -10px -10px -4px -10px;
+
+        @include breakpoint-down(small) {
+            margin: -20px;
+        }
+    }
+
+    .slides {
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        background-position: center;
+
+        .about-container {
+            width: 35%;
+            padding: 8px 16px;
+            position: absolute;
+            top: 50%;
+            left: 0%;
+            transform: translate(0%, -50%);
+            text-align: center;
+            color: white;
+
+            @include breakpoint-down(small) {
+                display: none;
+            }
+
+            .about {
+                // width: 200px;
+                padding: 12px 24px;
+                opacity: 0.60;
+                border-radius: 8px;
+                text-align: center;
+                font-size: 16px;
+                background-color: #000;
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                h1 {
+                    font-size: 24px;
+                    font-weight: 400;
+                    margin: 10px 0;
+                    color: #f44336;
+
+
+                }
+
+                .second-h1 {
+                    color: white;
+                }
+
+                hr {
+                    opacity: 0.60;
+                    border: 0;
+                    border-top: 1px solid #eee;
+                    margin: 20px 0;
+                    box-sizing: content-box;
+                    height: 0;
+                    overflow: visible;
+                }
+
+                p {
+                    padding-bottom: 16px;
+                }
+
+                button {
+                    padding: 13px;
+                    appearance: none;
+                    background-color: #f44336;
+                    border: none;
+                    color: white;
+                    border-radius: 5px;
+                    cursor: pointer;
+
+
+                }
+
+                .second-btn {
+                    background-color: rgb(63, 81, 181);
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+.first {
+
+    background-image: url(../assets/app.jpg);
+
+}
+
+.second {
+    background-image: url(../assets/timed.jpg);
+
+
+
+}
+
+.unshow {
+    display: none;
+
+}
+
+.tour-btn {
+    position: absolute;
+}
+
+.carousel .control-next.control-arrow::before {
+    border-left: none !important;
+}
+
+.carousel .control-prev.control-arrow::before {
+    border-right: none !important;
+}
+
+.control-prev {
+    display: none !important;
+
+}
+
+.control-arrow {
+    opacity: 1 !important;
+}
+
+.carousel.carousel-slider .control-arrow {
+    top: 50% !important;
+    color: #fff !important;
+    font-size: 16px !important;
+    margin-top: 0 !important;
+    padding: 5px !important;
+    bottom: unset !important;
+    background-color: black !important;
+    border-radius: 5px !important;
+    right: 10px !important;
+
+    &:hover {
+        color: black !important;
+        background-color: #f1f1f1 !important;
+
+    }
+
+}
+
+.carousel .control-arrow::before,
+.carousel.carousel-slider .control-arrow::before {
+    margin: 0px 5px !important;
+    display: inline-block !important;
+    content: 'Take Tour' !important;
+    border-top: unset !important;
+    border-bottom: unset !important;
+}
+
+@include breakpoint-down(medium) {
+    .control-next {
+        display: none !important;
+    }
+}
+
+.whyapp {
+    height: 100vh;
+    background-color: white;
+    margin: -40px -10px 0 -10px;
+    padding: 60px 10px;
+    display: flex;
+    gap: 30px;
+    place-items: center;
+    // grid-template-columns: 1fr 1fr;
+
+    @include breakpoint-down(small) {
+        margin: -40px -20px 0 -20px;
+        // flex-direction: column;
+
+    }
+
+
+
+    .left {
+
+        h1,
+        h2 {
+            font-size: 64px;
+            font-weight: 400;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+
+        h2 {
+            font-size: 40px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        a {
+
+            button {
+                color: #000;
+                margin-top: 15px;
+                appearance: none;
+                border-radius: 5px;
+                border: none;
+                padding: 15px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #ccc;
+
+                }
+            }
+        }
+    }
+
+    .right {
+
+        @include breakpoint-down(small) {
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 712px) {
+    .whyapp {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 345px) {
+    .whyapp {
+
+        .left {
+
+            h1 {
+                font-size: 40px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+        }
+    }
+
+}
