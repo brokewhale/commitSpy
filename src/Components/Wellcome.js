@@ -99,6 +99,26 @@ const Wellcome = () => {
                 </div>
 
 
+                <div className={`slides first `}>
+                    {/* <img src={app} alt="test" /> */}
+                    <div className="about-container">
+
+                        <div className="about">
+                            <h1>Manage your Projects</h1>
+                            <hr />
+                            <p>keep track of your projects with time</p>
+                            {/* <Link to='/signin'> Get Started </Link> */}
+                            <Link className='goLogin' to='/signin'>
+                                <button >Get Started</button>
+                            </Link>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
             </Carousel>
             <div className="whyapp">
                 <div className="left">
