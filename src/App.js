@@ -4,10 +4,11 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import Login from './Components/Login';
 import CreateUser from './Components/CreateUser';
 import Home from './Components/Home';
-import Wellcome from './Components/Wellcome'
+// import Wellcome from './Components/Wellcome'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import ForgetPass from './Components/ForgetPass';
 import VerifyPass from './Components/VerifyPass';
+import LandingPage from './Components/LandingPage';
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
       <Router>
         <Switch>
 
-          <Route exact path="/" component={Wellcome} />
+          <Route exact path="/" component={LandingPage} />
 
 
           <Route path='/register'>
