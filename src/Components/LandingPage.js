@@ -46,7 +46,7 @@ const LandingPage = () => {
                             <img src={first} alt="project management" />
                         </div>
                         <h3>Project Management</h3>
-                        <p>Manage your project efectively </p>
+                        <p>Manage your project effectively </p>
                     </div>
                     <div className="list">
                         <div className="list-logo">
@@ -54,7 +54,7 @@ const LandingPage = () => {
                             <img src={second} alt="project management" />
                         </div>
                         <h3>Set A Goal</h3>
-                        <p>You can set the amount of commit you want to achive within specicific time </p>
+                        <p>You can set the amount of commit you want to archive within specific time </p>
                     </div>
                     <div className="list">
                         <div className="list-logo">
