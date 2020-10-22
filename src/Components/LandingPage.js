@@ -22,10 +22,10 @@ const LandingPage = () => {
                         <h1>Commitspy</h1>
                         <h2>Project Manager</h2>
                     </div>
-                    <p>Aren't you tired of abandoning 😬 your projects? Do you also love hopping from one project to another without completing any.
-                    </p><p>CommitSpy helps you track your project repositories and "punishes"😬 you when you fail to meetup with your commit goals in a preset time interval⏳.
-                    The punishment is in form of a mildly harsh(cheeky) 😈 tweet/email 📨 or a donatiion 🤑 from your wallet to a charity (if you need more "motivation").
-                    </p><p>This way, the world 🗺 benefits from you even when you are lazy🤓.
+                    <p>Aren't you tired of abandoning <span role="img" aria-label="Grimancy face">😬</span> your projects? Do you also love hopping from one project to another without completing any.
+                    </p><p>CommitSpy helps you track your project repositories and "punishes"<span role="img" aria-label="Grimancy face">😬</span> you when you fail to meetup with your commit goals in a preset time interval⏳.
+                    The punishment is in form of a mildly harsh(cheeky)  <span role="img" aria-label="Grimancy face">😈</span> tweet/email <span role="img" aria-label="Grimancy face">📨</span> or a donatiion <span role="img" aria-label="Grimancy face">🤑</span> from your wallet to a charity (if you need more "motivation").
+                    </p><p>This way, the world <span role="img" aria-label="Grimancy face">🗺</span> benefits from you even when you are lazy<span role="img" aria-label="Grimancy face">🤓</span>.
                          </p>
 
                     <button> <Link to='/signin'> Get Started</Link></button>
