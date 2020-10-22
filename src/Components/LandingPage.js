@@ -3,6 +3,8 @@ import iphone2 from '../assets/iphone2.png';
 import first from '../assets/61.png';
 import second from '../assets/62.png';
 import third from '../assets/63.png'
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -20,9 +22,13 @@ const LandingPage = () => {
                         <h1>Commitspy</h1>
                         <h2>Project Manager</h2>
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, cum veritatis ut atque dolor est?
-                         adipisicing elit. Pariatur sint animi quas quidem!</p>
-                    <button>Get Started</button>
+                    <p>Aren't you tired of abandoning 😬 your projects? Do you also love hopping from one project to another without completing any.
+                    </p><p>CommitSpy helps you track your project repositories and "punishes"😬 you when you fail to meetup with your commit goals in a preset time interval⏳.
+                    The punishment is in form of a mildly harsh(cheeky) 😈 tweet/email 📨 or a donatiion 🤑 from your wallet to a charity (if you need more "motivation").
+                    </p><p>This way, the world 🗺 benefits from you even when you are lazy🤓.
+                         </p>
+
+                    <button> <Link to='/signin'> Get Started</Link></button>
                 </div>
                 <div className="right">
                     <img src={iphone2} alt="iphone" />

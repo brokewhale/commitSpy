@@ -176,6 +176,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 25px;
 }
 
 @media (max-width: 40em) {
@@ -216,6 +217,17 @@ a {
   display: flex;
   z-index: 1;
   position: relative;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (max-width: 64em) {
+  .landingpage .landing-intro {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .landingpage .landing-intro .left {
@@ -225,6 +237,13 @@ a {
   -webkit-box-flex: 0.5;
       -ms-flex: 0.5;
           flex: 0.5;
+}
+
+@media (max-width: 64em) {
+  .landingpage .landing-intro .left {
+    padding: 15px;
+    margin-top: 20px;
+  }
 }
 
 .landingpage .landing-intro .left .title {
@@ -237,9 +256,21 @@ a {
   font-size: 55px;
 }
 
+@media (max-width: 64em) {
+  .landingpage .landing-intro .left .title h1 {
+    font-size: 36px;
+  }
+}
+
 .landingpage .landing-intro .left .title h2 {
   font-weight: 500;
   font-size: 55px;
+}
+
+@media (max-width: 64em) {
+  .landingpage .landing-intro .left .title h2 {
+    font-size: 36px;
+  }
 }
 
 .landingpage .landing-intro .left p {
@@ -270,6 +301,12 @@ a {
   text-align: right;
 }
 
+@media (max-width: 64em) {
+  .landingpage .landing-intro .right {
+    text-align: center;
+  }
+}
+
 .landingpage .landing-intro .right img {
   height: auto;
   max-width: 100%;
@@ -281,6 +318,12 @@ a {
   position: absolute;
   width: 100%;
   top: 706px;
+}
+
+@media (max-width: 64em) {
+  .landingpage .under {
+    display: none;
+  }
 }
 
 .landingpage .features {
@@ -304,6 +347,8 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .landingpage .features-grid .list {
