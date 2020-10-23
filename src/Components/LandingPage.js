@@ -40,14 +40,7 @@ const LandingPage = () => {
             <div className="features">
                 <h1>How it Works</h1>
                 <div className="features-grid">
-                    <div className="list">
-                        <div className="list-logo">
 
-                            <img src={first} alt="project management" />
-                        </div>
-                        <h3>Project Management</h3>
-                        <p>Manage your project effectively </p>
-                    </div>
                     <div className="list">
                         <div className="list-logo">
 
@@ -62,7 +55,15 @@ const LandingPage = () => {
                             <img src={third} alt="project management" />
                         </div>
                         <h3>Get Alert</h3>
-                        <p>You will be alerted if you didn't meet the set goal through twitter or email </p>
+                        <p>You will be alerted if you don't meet the set goal through twitter or email </p>
+                    </div>
+                    <div className="list">
+                        <div className="list-logo">
+
+                            <img src={first} alt="project management" />
+                        </div>
+                        <h3>Charity</h3>
+                        <p>Donation of a Fixed Stipend on your behalf to a Charity when you don't meetup with your commit goals. </p>
                     </div>
                 </div>
             </div>
