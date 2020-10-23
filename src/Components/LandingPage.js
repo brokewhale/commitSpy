@@ -1,5 +1,5 @@
 import React from 'react';
-import iphone2 from '../assets/iphone2.png';
+import iphone2 from '../assets/iphone4.png';
 import first from '../assets/61.png';
 import second from '../assets/62.png';
 import third from '../assets/63.png'
@@ -24,7 +24,7 @@ const LandingPage = () => {
                     </div>
                     <p>Aren't you tired of abandoning <span role="img" aria-label="Grimancy face">😬</span> your projects? Do you also love hopping from one project to another without completing any.
                     </p><p>CommitSpy helps you track your project repositories and "punishes"<span role="img" aria-label="Grimancy face">😬</span> you when you fail to meetup with your commit goals in a preset time interval⏳.
-                    The punishment is in form of a mildly harsh(cheeky)  <span role="img" aria-label="Grimancy face">😈</span> tweet/email <span role="img" aria-label="Grimancy face">📨</span> or a donatiion <span role="img" aria-label="Grimancy face">🤑</span> from your wallet to a charity (if you need more "motivation").
+                    The punishment is in form of a mildly harsh(cheeky)  <span role="img" aria-label="Grimancy face">😈</span> tweet/email <span role="img" aria-label="Grimancy face">📨</span> or a donation <span role="img" aria-label="Grimancy face">🤑</span> from your wallet to a charity (if you need more "motivation").
                     </p><p>This way, the world <span role="img" aria-label="Grimancy face">🗺</span> benefits from you even when you are lazy<span role="img" aria-label="Grimancy face">🤓</span>.
                          </p>
 
