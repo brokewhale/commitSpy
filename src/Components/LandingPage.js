@@ -12,14 +12,14 @@ const LandingPage = () => {
     return (
         <div className='landingpage'>
             <div className="nav">
-                <div className="brand">Commitspy</div>
-                <button>Contact</button>
+                <div className="brand">CommitSpy</div>
+                <button><a href="'mailto:yusufkehinde11@gmail.com">Contact</a></button>
             </div>
             <div className="landing-intro">
                 <div className="left">
                     <div className="title">
 
-                        <h1>Commitspy</h1>
+                        <h1>CommitSpy</h1>
                         <h2>Project Manager</h2>
                     </div>
                     <p>Aren't you tired of abandoning <span role="img" aria-label="Grimancy face">😬</span> your projects? Do you also love hopping from one project to another without completing any.
