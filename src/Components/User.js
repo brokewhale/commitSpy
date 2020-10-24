@@ -142,7 +142,7 @@ const User = ({ token, name, img, email, projects, wallet, proj }) => {
                         startIcon={<PaymentIcon />}
                         onClick={sendpayment}
                     >
-                        {!btnload && <span> PAY</span>} {btnload && <CircularProgress />}
+                        {!btnload && <span> PAY</span>} {btnload && <CircularProgress className='dialog-loadd' />}
                     </Button>
                     <Button
                         variant="outlined"

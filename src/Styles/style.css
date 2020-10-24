@@ -1298,7 +1298,6 @@ a {
 }
 
 .pay_pop {
-  background-color: #D0DBF2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1309,7 +1308,6 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 20px;
   border-radius: 8px;
 }
 
@@ -1338,5 +1336,11 @@ a {
 
 .logout p {
   font-size: 10px;
+}
+
+.dialog-loadd {
+  width: 15px !important;
+  height: 15px !important;
+  margin-left: 9px;
 }
 /*# sourceMappingURL=style.css.map */
