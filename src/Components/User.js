@@ -14,6 +14,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import EditIcon from '@material-ui/icons/Edit';
 
 
 
@@ -21,17 +22,43 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 
 
-const User = ({ token, name, img, email, projects, wallet, proj }) => {
+const User = ({ token, name, img, email, projects, wallet, proj, twitter }) => {
     // eslint-disable-next-line
     const [{ isLoggedIn }, dispatch] = useStateValue();
 
     const [open, setOpen] = useState(false);
+    const [editopen, setEditopen] = useState(false);
+    //Payment
     const [amount, setAmount] = useState('')
     const [btnload, setBtnload] = useState(false)
+    //Details
+    const [twitterUname, setTwitterUname] = useState(twitter)
+    const [userpass, setUserpass] = useState('')
+    const [confirmpass, setConfirmpass] = useState('')
+    // const [errormsg, setErrormsg] = useState('')
+    const [errorui, setErrorui] = useState(false)
+    const [errorui1, setErrorui1] = useState(false)
+
+
+
+
 
     const handleClickOpen = () => {
         setOpen(true);
     };
+    const handleEditOpen = () => {
+        setEditopen(true)
+    }
+    const handleEditClose = () => {
+        setEditopen(false)
+        setUserpass('')
+        setConfirmpass('')
+        // setErrormsg('')
+        setErrorui1(false)
+        setErrorui(false)
+
+
+    }
 
     const handleClose = () => {
         setOpen(false);
@@ -76,11 +103,79 @@ const User = ({ token, name, img, email, projects, wallet, proj }) => {
 
 
     }
+
+    const editDetails = () => {
+        const axios = require('axios');
+
+        // setErrormsg('')
+        setErrorui1(false)
+        setErrorui(false)
+        if (userpass.length > 0) {
+            if (userpass.length >= 8) {
+
+                if (userpass === confirmpass) {
+                    let user = {
+                        twitter: twitterUname,
+                        password: userpass
+                    }
+                    axios.put(`https://commitspy.herokuapp.com/api/users/me`, { user }, {
+                        headers: { 'authorization': `Bearer ${token}` },
+
+                    }).then(function (response) {
+                        console.log(response);
+
+
+                        handleEditClose()
+
+
+
+                    }).catch(function (error) {
+                        console.log(error);
+                    });
+                } else {
+                    // console.log('not correct');
+                    // setErrormsg('Password must be the same')
+                    setErrorui1(true)
+                    return false
+                }
+            } else {
+                // console.log('must be more than or equall 8 characters');
+                // setErrormsg('password must be equal to or more than eight(8) Characters')
+                setErrorui(true)
+            }
+        } else {
+            // console.log('dont want to change password send twitter only');
+
+            let user = {
+                twitter: twitterUname,
+                // password = userpass
+            }
+            axios.put(`https://commitspy.herokuapp.com/api/users/me`, { user }, {
+                headers: { 'authorization': `Bearer ${token}` },
+
+            }).then(function (response) {
+                console.log(response);
+
+
+                handleEditClose()
+
+
+
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
+    }
     return (
 
         <div className="user">
-            <div className="logout">
-                <ExitToAppOutlinedIcon onClick={logout} />
+            <div className="edit-icon" onClick={handleEditOpen}>
+                <EditIcon />
+                <p>Edit Details</p>
+
+            </div>
+            <div className="logout" onClick={logout}>
+                <ExitToAppOutlinedIcon />
                 <p>Logout</p>
 
             </div>
@@ -123,11 +218,71 @@ const User = ({ token, name, img, email, projects, wallet, proj }) => {
                         startIcon={<CancelOutlined />}
                         onClick={closeModal}
                     >
-                        CANCLE
+                        CANCEL
                     </Button>
                 </form>
 
             </Popup> */}
+
+            {/* EDIT Details DIALOG */}
+
+            <Dialog disableBackdropClick disableEscapeKeyDown open={editopen} onClose={handleEditClose}>
+                <DialogTitle>Fill the form</DialogTitle>
+                <DialogContent>
+                    <form className='pay_pop' noValidate autoComplete="off">
+                        <TextField id="outlined-basic" size='small' value={twitterUname} onChange={e => setTwitterUname(e.target.value)} label="Enter new twitter handle" variant="outlined" />
+                        <TextField
+                            id="outlined-password-input"
+                            label="Password"
+                            type="password"
+                            variant="outlined"
+                            size='small'
+                            value={userpass}
+                            onChange={e => setUserpass(e.target.value)}
+                            error={errorui}
+                            helperText="password must be equal to or more than eight(8) Characters"
+                        />
+                        <TextField
+                            id="outlined-password-input"
+                            label="Confirm Password"
+                            type="password"
+                            variant="outlined"
+                            size='small'
+                            value={confirmpass}
+                            onChange={e => setConfirmpass(e.target.value)}
+                            helperText='Password must be the same'
+                            error={errorui1}
+
+                        />
+                        {/* <p className='errormsg'>{errormsg}</p> */}
+                    </form>
+                </DialogContent>
+                <DialogActions>
+                    <Button
+                        variant="outlined"
+                        color="default"
+                        startIcon={<PaymentIcon />}
+                        onClick={editDetails}
+                    >
+                        {/* {!btnload && <span> PAY</span>} {btnload && <CircularProgress className='dialog-loadd' />} */}
+                        SAVE
+                    </Button>
+                    <Button
+                        variant="outlined"
+                        color="default"
+                        startIcon={<CancelOutlined />}
+                        onClick={handleEditClose}
+                    >
+                        CANCEL
+                    </Button>
+                </DialogActions>
+            </Dialog>
+
+
+
+            {/* PAYMENT DIALOG */}
+
+
             <Dialog disableBackdropClick disableEscapeKeyDown open={open} onClose={handleClose}>
                 <DialogTitle>Fill the form</DialogTitle>
                 <DialogContent>
@@ -150,10 +305,13 @@ const User = ({ token, name, img, email, projects, wallet, proj }) => {
                         startIcon={<CancelOutlined />}
                         onClick={handleClose}
                     >
-                        CANCLE
+                        CANCEL
                     </Button>
                 </DialogActions>
             </Dialog>
+
+
+
 
         </div>
 

@@ -134,3 +134,19 @@
     margin-left: 9px;
 
 }
+
+.edit-icon {
+    position: absolute;
+    top: 13px;
+    left: 17px;
+    cursor: pointer;
+    text-align: center;
+
+    p {
+        font-size: 10px;
+    }
+}
+
+.errormsg {
+    width: 236px;
+}

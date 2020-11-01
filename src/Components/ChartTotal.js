@@ -15,7 +15,7 @@ const Chart = ({ projects }) => {
 
 
 
-            console.log('totalcomit', totalCommits);
+            // console.log('totalcomit', totalCommits);
 
             //main function for generating the label and the data.
             function parsePopulate(weeklyCommits) {
@@ -35,7 +35,7 @@ const Chart = ({ projects }) => {
                 let data = [];
                 for (let j = 0; j < projects.length; j++) {
                     let tempdataset = parsePopulate(projects[j]);
-                    console.log("tempdataset = ", tempdataset);
+                    // console.log("tempdataset = ", tempdataset);
                     for (let k = 0; k < tempdataset.labels.length; k++) {
                         let cursor = labels.indexOf(tempdataset.labels[k])
                         if (cursor !== -1) {

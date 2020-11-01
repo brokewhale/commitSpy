@@ -141,7 +141,7 @@ const Home = () => {
                                         </Route>
                                         <Route path='/home/user' >
                                             <div className="showmain">
-                                                <User token={token} name={me.user.username} img={me?.user.avatar} email={me.user.email} projects={projects.length} wallet={me.user.wallet} proj={projects} />
+                                                <User token={token} name={me.user.username} twitter={me.user.twitter} img={me?.user.avatar} email={me.user.email} projects={projects.length} wallet={me.user.wallet} proj={projects} />
 
                                             </div>
                                         </Route>
@@ -192,7 +192,7 @@ const Home = () => {
                                             </Route>
                                             <Route path='/home/user' >
                                                 <div className="showmain">
-                                                    <User token={token} name={me.user.username} img={me?.user.avatar} email={me.user.email} projects={projects.length} wallet={me.user.wallet} proj={projects} />
+                                                    <User token={token} name={me.user.username} twitter={me.user.twitter} img={me?.user.avatar} email={me.user.email} projects={projects.length} wallet={me.user.wallet} proj={projects} />
 
                                                 </div>
                                             </Route>

@@ -1343,4 +1343,20 @@ a {
   height: 15px !important;
   margin-left: 9px;
 }
+
+.edit-icon {
+  position: absolute;
+  top: 13px;
+  left: 17px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.edit-icon p {
+  font-size: 10px;
+}
+
+.errormsg {
+  width: 236px;
+}
 /*# sourceMappingURL=style.css.map */
