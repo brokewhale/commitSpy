@@ -97,6 +97,7 @@
     flex-direction: column;
     justify-content: space-between;
     border-radius: 8px;
+    gap: 10px;
 
     .MuiFormControl-root {
         margin-bottom: 16px;
@@ -112,6 +113,32 @@
             color: black;
 
         }
+    }
+
+    .ten {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+
+        span {
+            span {
+
+                font-weight: 700;
+                font-size: 19px;
+                margin-left: 10px;
+            }
+        }
+
+        button {
+
+            span {
+
+                font-weight: unset;
+            }
+        }
+
+
     }
 
 }

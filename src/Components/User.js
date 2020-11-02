@@ -190,8 +190,8 @@ const User = ({ token, name, img, email, projects, wallet, proj, twitter }) => {
                 </div>
                 <div className="divide"></div>
                 <div className="amounti card">
-                    <p><span>&#8358;</span>  {wallet}</p>
-                    <h3>Wallet</h3>
+                    <p>{wallet} </p>
+                    <h3>CommitCoin</h3>
                 </div>
             </div>
             <div className="addmoney" onClick={handleClickOpen}>
@@ -284,21 +284,64 @@ const User = ({ token, name, img, email, projects, wallet, proj, twitter }) => {
 
 
             <Dialog disableBackdropClick disableEscapeKeyDown open={open} onClose={handleClose}>
-                <DialogTitle>Fill the form</DialogTitle>
+                <DialogTitle>Select the plan you want</DialogTitle>
                 <DialogContent>
                     <form className='pay_pop' noValidate autoComplete="off">
-                        <TextField id="outlined-basic" size='small' value={amount} onChange={e => setAmount(e.target.value)} label="Enter Amount (₦)" variant="outlined" />
+                        {/* <TextField id="outlined-basic" size='small' value={amount} onChange={e => setAmount(e.target.value)} label="CommitCoin" variant="outlined" /> */}
+                        <div className="ten">
+                            <span>10 CommitCoin for <span>$5</span> </span>
+
+
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                size='small'
+
+                            // startIcon={<PaymentIcon />}
+                            >
+                                Buy
+                             </Button>
+                        </div>
+                        <div className="ten">
+                            <span>50 CommitCoin for <span>$10</span> </span>
+
+
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                size='small'
+
+
+                            // startIcon={<PaymentIcon />}
+                            >
+                                Buy
+                             </Button>
+                        </div>
+                        <div className="ten">
+                            <span>100 CommitCoin for <span>$15</span> </span>
+
+
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                size='small'
+
+                            // startIcon={<PaymentIcon />}
+                            >
+                                Buy
+                             </Button>
+                        </div>
                     </form>
                 </DialogContent>
                 <DialogActions>
-                    <Button
+                    {/* <Button
                         variant="outlined"
                         color="default"
                         startIcon={<PaymentIcon />}
                         onClick={sendpayment}
                     >
                         {!btnload && <span> PAY</span>} {btnload && <CircularProgress className='dialog-loadd' />}
-                    </Button>
+                    </Button> */}
                     <Button
                         variant="outlined"
                         color="default"

@@ -1309,6 +1309,7 @@ a {
       -ms-flex-pack: justify;
           justify-content: space-between;
   border-radius: 8px;
+  gap: 10px;
 }
 
 .pay_pop .MuiFormControl-root {
@@ -1324,6 +1325,29 @@ a {
   height: 15px !important;
   margin-left: 9px;
   color: black;
+}
+
+.pay_pop .ten {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+
+.pay_pop .ten span span {
+  font-weight: 700;
+  font-size: 19px;
+  margin-left: 10px;
+}
+
+.pay_pop .ten button span {
+  font-weight: unset;
 }
 
 .logout {
