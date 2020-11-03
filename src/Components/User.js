@@ -3,7 +3,7 @@ import { Avatar } from '@material-ui/core';
 import PaymentIcon from '@material-ui/icons/Payment';
 // import Popup from 'reactjs-popup';
 import { useState } from 'react';
-import CircularProgress from '@material-ui/core/CircularProgress';
+// import CircularProgress from '@material-ui/core/CircularProgress';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { CancelOutlined } from '@material-ui/icons';
@@ -29,8 +29,8 @@ const User = ({ token, name, img, email, projects, wallet, proj, twitter }) => {
     const [open, setOpen] = useState(false);
     const [editopen, setEditopen] = useState(false);
     //Payment
-    const [amount, setAmount] = useState('')
-    const [btnload, setBtnload] = useState(false)
+    // const [amount, setAmount] = useState('')
+    // const [btnload, setBtnload] = useState(false)
     //Details
     const [twitterUname, setTwitterUname] = useState(twitter)
     const [userpass, setUserpass] = useState('')
@@ -62,16 +62,39 @@ const User = ({ token, name, img, email, projects, wallet, proj, twitter }) => {
 
     const handleClose = () => {
         setOpen(false);
-        setAmount('')
-        setBtnload(false)
+        // setAmount('')
+        // setBtnload(false)
 
     }
 
-    const sendpayment = () => {
-        setBtnload(true)
+    // const sendpayment = () => {
+    //     setBtnload(true)
+    //     let payment = {
+    //         amount: amount * 100,
+    //         currency: 'NGN'
+    //     }
+    //     let data = { payment };
+    //     const axios = require('axios');
+    //     axios.post(`https://commitspy.herokuapp.com/api/payment/init`, data, {
+    //         headers: { 'authorization': `Bearer ${token}` }
+    //     }).then(function (response) {
+    //         console.log(response.data.authorization_url);
+    //         window.location.href = response.data.authorization_url
+
+    //         setAmount('')
+    //         setBtnload(false)
+
+
+
+
+    //     }).catch(err => {
+    //         console.log(err);
+    //     })
+    // }
+
+    const send10coins = () => {
         let payment = {
-            amount: amount * 100,
-            currency: 'NGN'
+            coins: 10
         }
         let data = { payment };
         const axios = require('axios');
@@ -81,8 +104,7 @@ const User = ({ token, name, img, email, projects, wallet, proj, twitter }) => {
             console.log(response.data.authorization_url);
             window.location.href = response.data.authorization_url
 
-            setAmount('')
-            setBtnload(false)
+
 
 
 
@@ -91,6 +113,52 @@ const User = ({ token, name, img, email, projects, wallet, proj, twitter }) => {
             console.log(err);
         })
     }
+
+    const send50coins = () => {
+        let payment = {
+            coins: 50
+        }
+        let data = { payment };
+        const axios = require('axios');
+        axios.post(`https://commitspy.herokuapp.com/api/payment/init`, data, {
+            headers: { 'authorization': `Bearer ${token}` }
+        }).then(function (response) {
+            console.log(response.data.authorization_url);
+            window.location.href = response.data.authorization_url
+
+
+
+
+
+
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+
+    const send100coins = () => {
+        let payment = {
+            coins: 100
+        }
+        let data = { payment };
+        const axios = require('axios');
+        axios.post(`https://commitspy.herokuapp.com/api/payment/init`, data, {
+            headers: { 'authorization': `Bearer ${token}` }
+        }).then(function (response) {
+            console.log(response.data.authorization_url);
+            window.location.href = response.data.authorization_url
+
+
+
+
+
+
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+
+
 
 
     const logout = () => {
@@ -200,30 +268,6 @@ const User = ({ token, name, img, email, projects, wallet, proj, twitter }) => {
             </div>
             <ChartTotal projects={proj} />
 
-            {/* <Popup open={open} closeOnDocumentClick onClose={closeModal}  >
-
-                <form className='pay_pop' noValidate autoComplete="off">
-                    <TextField id="outlined-basic" size='small' value={amount} onChange={e => setAmount(e.target.value)} label="Enter Amount (₦)" variant="outlined" />
-                    <Button
-                        variant="outlined"
-                        color="default"
-                        startIcon={<PaymentIcon />}
-                        onClick={sendpayment}
-                    >
-                        {!btnload && <span> PAY</span>} {btnload && <CircularProgress />}
-                    </Button>
-                    <Button
-                        variant="outlined"
-                        color="default"
-                        startIcon={<CancelOutlined />}
-                        onClick={closeModal}
-                    >
-                        CANCEL
-                    </Button>
-                </form>
-
-            </Popup> */}
-
             {/* EDIT Details DIALOG */}
 
             <Dialog disableBackdropClick disableEscapeKeyDown open={editopen} onClose={handleEditClose}>
@@ -296,6 +340,7 @@ const User = ({ token, name, img, email, projects, wallet, proj, twitter }) => {
                                 variant="contained"
                                 color="primary"
                                 size='small'
+                                onClick={send10coins}
 
                             // startIcon={<PaymentIcon />}
                             >
@@ -303,13 +348,15 @@ const User = ({ token, name, img, email, projects, wallet, proj, twitter }) => {
                              </Button>
                         </div>
                         <div className="ten">
-                            <span>50 CommitCoin for <span>$10</span> </span>
+                            <span>50 CommitCoin for <span>$20</span> </span>
 
 
                             <Button
                                 variant="contained"
                                 color="primary"
                                 size='small'
+                                onClick={send50coins}
+
 
 
                             // startIcon={<PaymentIcon />}
@@ -318,13 +365,15 @@ const User = ({ token, name, img, email, projects, wallet, proj, twitter }) => {
                              </Button>
                         </div>
                         <div className="ten">
-                            <span>100 CommitCoin for <span>$15</span> </span>
+                            <span>100 CommitCoin for <span>$80</span> </span>
 
 
                             <Button
                                 variant="contained"
                                 color="primary"
                                 size='small'
+                                onClick={send100coins}
+
 
                             // startIcon={<PaymentIcon />}
                             >
