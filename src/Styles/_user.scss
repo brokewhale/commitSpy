@@ -3,8 +3,13 @@
     display: flex;
     flex-direction: column;
     place-items: center;
-    height: 97vh;
+    padding-top: 10px;
     position: relative;
+
+    @include breakpoint-up(large) {
+        height: 97vh;
+
+    }
 
 
 
@@ -176,4 +181,9 @@
 
 .errormsg {
     width: 236px;
+}
+
+.chartjs-render-monitor {
+    width: 86vw !important;
+    max-width: 300px;
 }

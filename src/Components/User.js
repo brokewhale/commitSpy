@@ -263,7 +263,7 @@ const User = ({ token, name, img, email, projects, wallet, proj, twitter }) => {
                 </div>
             </div>
             <div className="addmoney" onClick={handleClickOpen}>
-                <h3>Add money</h3>
+                <h3>Buy CommitCoin</h3>
                 <PaymentIcon />
             </div>
             <ChartTotal projects={proj} />

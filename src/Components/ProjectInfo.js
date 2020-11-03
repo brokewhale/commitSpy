@@ -231,7 +231,7 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
                     <DialogTitle>Fill the form</DialogTitle>
                     <DialogContent>
                         <form className='dialog-edit'>
-                            <TextField size='small' className='minmax' id="outlined-basic" label="Maxtime" variant="outlined" value={maxtime} onChange={e => setMaxtime(e.target.value)} />
+                            <TextField size='small' className='minmax' id="outlined-basic" label="Maxtime(Days)" variant="outlined" value={maxtime} onChange={e => setMaxtime(e.target.value)} />
                             <TextField size='small' className='minmax' id="outlined-basic" label="Set Min Commit" variant="outlined" value={mincommit} onChange={e => setMincommit(e.target.value)} />
                             <FormControl size='small' variant="outlined" className="alarm-billing">
                                 <InputLabel id="demo-dialog-select-label">Alarm Type</InputLabel>

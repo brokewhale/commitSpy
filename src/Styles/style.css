@@ -1196,8 +1196,14 @@ a {
       -ms-flex-direction: column;
           flex-direction: column;
   place-items: center;
-  height: 97vh;
+  padding-top: 10px;
   position: relative;
+}
+
+@media (min-width: 1024px) {
+  .user {
+    height: 97vh;
+  }
 }
 
 .user .MuiAvatar-root {
@@ -1382,5 +1388,10 @@ a {
 
 .errormsg {
   width: 236px;
+}
+
+.chartjs-render-monitor {
+  width: 86vw !important;
+  max-width: 300px;
 }
 /*# sourceMappingURL=style.css.map */
