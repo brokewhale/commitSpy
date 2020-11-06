@@ -13,21 +13,23 @@ const LandingPage = () => {
         <div className='landingpage'>
             <div className="nav">
                 <div className="brand">CommitSpy</div>
-                <button><a href="'mailto:yusufkehinde11@gmail.com">Contact</a></button>
+                <button><a href="'mailto:commitspy@gmail.com">Contact</a></button>
             </div>
             <div className="landing-intro">
                 <div className="left">
                     <div className="title">
 
                         <h1>CommitSpy</h1>
-                        <h2>Project Manager</h2>
+                        <h2>The Perfect Motivation.</h2>
                     </div>
-                    <p>Aren't you tired of abandoning <span role="img" aria-label="Grimancy face">😬</span> your projects? Do you also love hopping from one project to another without completing any.
-                    </p><p>CommitSpy helps you track your project repositories and "punishes"<span role="img" aria-label="Grimancy face">😬</span> you when you fail to meetup with your commit goals in a preset time interval⏳.
-                    The punishment is in form of a mildly harsh(cheeky)  <span role="img" aria-label="Grimancy face">😈</span> tweet/email <span role="img" aria-label="Grimancy face">📨</span> or a donation <span role="img" aria-label="Grimancy face">🤑</span> from your wallet to a charity (if you need more "motivation").
-                    </p><p>This way, the world <span role="img" aria-label="Grimancy face">🗺</span> benefits from you even when you are lazy<span role="img" aria-label="Grimancy face">🤓</span>.
+                    <p>Aren't you tired of abandoning <span role="img" aria-label="Grimancy face">😬</span> your projects? Verily, the right motivation can help you.
+                    </p><p>CommitSpy tracks your project repositories and donates <span role="img" aria-label="Grimancy face">🤑</span> to a charity on your behalf <span role="img" aria-label="Grimancy face">😬</span> when you fail to meet up with your commit goals in a preset time interval⏳.
+                    </p>
+                    <p>This way, the world <span role="img" aria-label="Grimancy face">🗺</span> benefits even when you are lazy <span role="img" aria-label="Grimancy face">🤓</span>.
                          </p>
 
+
+                    <p>Get up to 10 commitCoins when you signup.</p>
                     <button> <Link to='/signin'> Get Started</Link></button>
                 </div>
                 <div className="right">
@@ -38,35 +40,41 @@ const LandingPage = () => {
             <div className="under"></div>
 
             <div className="features">
-                <h1>How it Works</h1>
+                <h1>How does it work?</h1>
                 <div className="features-grid">
 
                     <div className="list">
                         <div className="list-logo">
 
-                            <img src={second} alt="project management" />
+                            <img src={first} alt="project management" />
                         </div>
                         <h3>Set A Goal</h3>
-                        <p>You can set the amount of commit you want to archive within specific time </p>
+                        <p>Set the amount of commit to be achieved within a specific time </p>
                     </div>
+
                     <div className="list">
                         <div className="list-logo">
 
                             <img src={third} alt="project management" />
                         </div>
-                        <h3>Get Alert</h3>
-                        <p>You will be alerted if you don't meet the set goal through twitter or email </p>
+                        <h3>Charity</h3>
+                        <p>A commitCoin is donated on your behalf when you fail to achieve your goal</p>
                     </div>
                     <div className="list">
                         <div className="list-logo">
 
-                            <img src={first} alt="project management" />
+                            <img src={second} alt="project management" />
                         </div>
-                        <h3>Charity</h3>
-                        <p>Donation of a Fixed Stipend on your behalf to a Charity when you don't meetup with your commit goals. </p>
+                        <h3>Get Alert</h3>
+                        <p>Be alerted via twitter or email to keep you informed</p>
                     </div>
+
                 </div>
             </div>
+
+            <section className='charity'>
+                <h1>Proposed Beneficiaries</h1>
+            </section>
 
         </div>
     );
