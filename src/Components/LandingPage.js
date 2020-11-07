@@ -4,6 +4,8 @@ import first from '../assets/61.png';
 import second from '../assets/62.png';
 import third from '../assets/63.png'
 import { Link } from 'react-router-dom';
+import Donateng from '../assets/logo-dark.png'
+import Bgc from '../assets/bgc.jpeg'
 
 
 
@@ -74,6 +76,26 @@ const LandingPage = () => {
 
             <section className='charity'>
                 <h1>Proposed Beneficiaries</h1>
+
+                <div className="imglogo-grid">
+
+                    <div className="imglogo">
+                        <img src={Donateng} alt="Donate.ng" />
+
+                    </div>
+                    <div className="imglogo">
+                        <img src={Bgc} alt="Donate.ng" />
+
+                    </div>
+                    <div className="imglogo">
+                        <img src={Donateng} alt="Donate.ng" />
+
+                    </div>
+                    <div className="imglogo">
+                        <img src={Bgc} alt="Donate.ng" />
+
+                    </div>
+                </div>
             </section>
 
         </div>
