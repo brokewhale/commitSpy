@@ -15,9 +15,17 @@
         padding: 25px;
         align-items: center;
         font-size: 25px;
+        padding-left: 84px;
 
         @include breakpoint-down(small) {
             justify-content: center;
+            display: none;
+
+        }
+
+        @include breakpoint-down(medium) {
+            padding: 25px;
+
 
         }
 
@@ -84,6 +92,11 @@
                         font-size: 36px;
                     }
 
+                    @include breakpoint-down(small) {
+                        text-align: center;
+                        margin-top: 15px;
+                    }
+
 
                 }
 
@@ -95,6 +108,12 @@
                         font-size: 36px;
                     }
 
+                    @include breakpoint-down(small) {
+                        text-align: center;
+                        font-size: 24px;
+
+                    }
+
                 }
             }
 
@@ -104,6 +123,13 @@
                 line-height: 28px;
                 color: #797687;
                 text-align: left;
+
+                @include breakpoint-down(small) {
+                    text-align: center;
+
+                }
+
+
             }
 
             button {

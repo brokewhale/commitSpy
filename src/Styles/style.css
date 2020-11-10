@@ -5,6 +5,7 @@ body {
   height: 100vh;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: "Public Sans", sans-serif;
   width: 100%;
 }
 
@@ -47,6 +48,7 @@ a {
       -ms-flex-align: center;
           align-items: center;
   font-size: 25px;
+  padding-left: 84px;
 }
 
 @media (max-width: 40em) {
@@ -54,6 +56,13 @@ a {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    display: none;
+  }
+}
+
+@media (max-width: 64em) {
+  .landingpage .nav {
+    padding: 25px;
   }
 }
 
@@ -139,6 +148,13 @@ a {
   }
 }
 
+@media (max-width: 40em) {
+  .landingpage .landing-intro .left .title h1 {
+    text-align: center;
+    margin-top: 15px;
+  }
+}
+
 .landingpage .landing-intro .left .title h2 {
   font-weight: 500;
   font-size: 55px;
@@ -150,12 +166,25 @@ a {
   }
 }
 
+@media (max-width: 40em) {
+  .landingpage .landing-intro .left .title h2 {
+    text-align: center;
+    font-size: 24px;
+  }
+}
+
 .landingpage .landing-intro .left p {
   margin-bottom: 20px;
   font-size: 16px;
   line-height: 28px;
   color: #797687;
   text-align: left;
+}
+
+@media (max-width: 40em) {
+  .landingpage .landing-intro .left p {
+    text-align: center;
+  }
 }
 
 .landingpage .landing-intro .left button {

@@ -4,6 +4,7 @@ body {
     font-size: 14px;
     height: 100vh;
     box-sizing: border-box;
+    font-family: "Public Sans", sans-serif;
 
     @include breakpoint-down(small) {
         padding: 20px;
