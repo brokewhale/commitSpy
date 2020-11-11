@@ -51,8 +51,11 @@ const Login = () => {
                 console.log(error);
                 setData({
                     isLoading: false,
-                    errorMessage: "Sorry! Login failed"
+                    errorMessage: "Login failed Invalid username or password"
+
                 });
+                setBtnload(false)
+
             });
 
 
@@ -70,7 +73,7 @@ const Login = () => {
 
             <div className="grid__container">
                 <div className="form__container">
-                    <p>{data.errorMessage}</p>
+                    <p className='em1'>{data.errorMessage}</p>
 
                     <h2>Sign In</h2>
 

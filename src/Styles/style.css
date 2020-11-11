@@ -128,6 +128,7 @@ a {
 @media (max-width: 40em) {
   .landingpage .landing-intro .left {
     margin-top: 0;
+    text-align: center;
   }
 }
 
@@ -187,7 +188,7 @@ a {
   }
 }
 
-.landingpage .landing-intro .left button {
+.landingpage .landing-intro .left .getstartedbtn {
   padding: 10px 38px;
   font-size: 16px;
   margin-right: 20px;
@@ -198,6 +199,9 @@ a {
   background: #262a41;
   border: none;
   color: white;
+  margin-top: 20px;
+  position: relative;
+  top: 12px;
 }
 
 .landingpage .landing-intro .right {
@@ -625,6 +629,12 @@ a {
 
 .gitlog svg {
   margin-left: 10px;
+}
+
+.em1 {
+  color: #e12424;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
 }
 
 .home {

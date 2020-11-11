@@ -151,7 +151,7 @@ const CreateUser = () => {
     if (state.isLoggedIn) {
         if (checkstate === 'reg') {
 
-            window.location.href = `https://github.com/apps/committ-app`;
+            window.location.href = `https://github.com/apps/commitspy`;
         } else if (checkstate === 'login') {
             return <Redirect to="/home" />;
         }

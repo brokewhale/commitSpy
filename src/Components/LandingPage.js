@@ -32,7 +32,7 @@ const LandingPage = () => {
 
 
                     <p>Get up to 10 commitCoins when you signup.</p>
-                    <button> <Link to='/signin'> Get Started</Link></button>
+                    <Link className='getstartedbtn' to='/signin'> Get Started</Link>
                 </div>
                 <div className="right">
                     <img src={iphone2} alt="iphone" />
