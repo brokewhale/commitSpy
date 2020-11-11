@@ -1225,6 +1225,12 @@ a {
   margin-left: 9px;
 }
 
+.em2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: red;
+}
+
 .forgetpass {
   height: 100vh;
   margin: 0;

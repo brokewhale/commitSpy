@@ -36,10 +36,17 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
 
     const handleClickOpen = () => {
         setOpen(true);
+        setMaxtime('')
+        // setMincommit('')
     };
 
     const handleClose = () => {
         setOpen(false);
+        setBtnload(false)
+        setEm2('')
+        setMaxtime('')
+        // setMincommit('')
+
     };
 
     // STATES
@@ -52,6 +59,7 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
     const [test, setTest] = useState(false)
     const [tweet, setTweet] = useState(0)
     const [btnload, setBtnload] = useState(false)
+    const [em2, setEm2] = useState('')
 
     const [proj, setProj] = useState({})
     const { roomId } = useParams();
@@ -136,6 +144,10 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
 
         }).catch(function (error) {
             console.log(error);
+            setBtnload(false)
+            setEm2('There was an error somewhere')
+
+
         });
     }
     if (done) {
@@ -231,6 +243,7 @@ const ProjectInfo = ({ projects, onKen, token, location }) => {
                     <DialogTitle>Fill the form</DialogTitle>
                     <DialogContent>
                         <form className='dialog-edit'>
+                            <p className='em2'>{em2}</p>
                             <TextField size='small' className='minmax' id="outlined-basic" label="Maxtime(Days)" variant="outlined" value={maxtime} onChange={e => setMaxtime(e.target.value)} />
                             <TextField size='small' className='minmax' id="outlined-basic" label="Set Min Commit" variant="outlined" value={mincommit} onChange={e => setMincommit(e.target.value)} />
                             <FormControl size='small' variant="outlined" className="alarm-billing">
