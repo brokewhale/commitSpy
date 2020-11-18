@@ -72,7 +72,7 @@ const VerifyPass = () => {
                 <form className="container">
 
                     <input className='pinput' type="password" placeholder='Enter your new password' value={pass} onChange={e => setPass(e.target.value)} />
-                    <button onClick={resetpass}>Reset Passwprd</button>
+                    <button onClick={resetpass}>Reset Password</button>
                 </form>
             </div>
 

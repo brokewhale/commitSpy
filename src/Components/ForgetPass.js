@@ -1,11 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
-import Popup from 'reactjs-popup';
 
 
 const ForgetPass = () => {
     const axios = require('axios');
-    const [open, setOpen] = useState(false);
+    const [success, setSuccess] = useState(false)
+
 
     const [email, setEmail] = useState('')
     const sendmail = (e) => {
@@ -22,7 +22,8 @@ const ForgetPass = () => {
         })
             .then(function (response) {
                 console.log(response);
-                setOpen(o => !o)
+                setSuccess(true)
+
 
 
             })
@@ -40,12 +41,9 @@ const ForgetPass = () => {
                 <input type="email" placeholder='enter email' value={email} onChange={e => setEmail(e.target.value)} />
                 <button onClick={sendmail}>Submit</button>
             </form>
-            <Popup open={open} closeOnDocumentClick  >
-                <div className='edit_pop'>
-                    <h1>Check your email to confirmm</h1>
-                </div>
-
-            </Popup>
+            <div className={success ? 'showconfirmEmail fade-in' : ' signup_confirmEmail '}>
+                <h3>Check your Email to rest your password</h3>
+            </div>
         </div>
 
     );
